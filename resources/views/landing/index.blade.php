@@ -330,60 +330,96 @@
     </section>
 
     <!-- Cross-Product Suite Section: Straits Ecosystem -->
-    <section id="ecosystem" class="py-20 bg-[#F4F1EA] border-b border-[#E8E5DF]">
+    <section id="ecosystem" class="py-24 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-white border-b border-[#E8E5DF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+            <div class="text-center mb-16">
                 <span class="text-xs font-bold text-[#10B981] uppercase tracking-widest">Part of the Straits Operating Platform</span>
-                <h2 class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">Explore the Straits Suite</h2>
-                <p class="text-[#4B5563] text-sm max-w-xl mx-auto mt-2">StraitsLedger connects directly with our parent platform and workforce payroll engine for zero-friction Singapore compliance.</p>
+                <h2 class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">The Unified Straits Business Suite</h2>
+                <p class="text-[#4B5563] text-sm max-w-2xl mx-auto mt-2">A sovereign trio of Singapore business solutions engineered to communicate natively under one unified login.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Link to Straits (Parent) -->
-                <a href="https://straits.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
-                            <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#FFFFFF"/>
-                                <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981"/>
-                                <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#0A3B32"/>
-                                <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#FFFFFF"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">Straits</h3>
-                                <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full">PARENT PLATFORM</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1: Straits Parent Platform -->
+                <a href="https://straits.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                                <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#FFFFFF"/>
+                                    <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981"/>
+                                    <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#0A3B32"/>
+                                    <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#FFFFFF"/>
+                                </svg>
                             </div>
-                            <p class="text-xs text-[#4B5563]">The Operating System for Singapore Business</p>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">Straits</h3>
+                                    <span class="text-[10px] bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded-full border border-slate-200">PARENT OS</span>
+                                </div>
+                                <p class="text-xs text-[#4B5563]">The Sovereign Operating System</p>
+                            </div>
                         </div>
+                        <p class="text-sm text-[#4B5563] leading-relaxed mb-6">
+                            Master holding portal and unified corporate identity provider connecting accounting, workforce payroll, and statutory reporting under single sign-on.
+                        </p>
                     </div>
-                    <p class="text-sm text-[#4B5563] leading-relaxed mb-4">
-                        The master holding portal and unified single sign-on connecting accounting, payroll, and statutory tax reporting under one sovereign login.
-                    </p>
-                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center">
-                        Visit Straits Master Portal <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center pt-4 border-t border-slate-100">
+                        Visit Straits Portal <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                     </span>
                 </a>
 
-                <!-- Link to StraitsHR -->
-                <a href="https://hr.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
-                            HR
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">StraitsHR</h3>
-                                <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full">MOM COMPLIANT</span>
-                            </div>
-                            <p class="text-xs text-[#4B5563]">Singapore Cloud Payroll &amp; Workforce Engine</p>
-                        </div>
+                <!-- Pillar 2: StraitsLedger (Current) -->
+                <div class="block bg-white p-8 rounded-2xl border-2 border-[#10B981] shadow-lg relative flex flex-col justify-between">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10B981] text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
+                        Current Application
                     </div>
-                    <p class="text-sm text-[#4B5563] leading-relaxed mb-4">
-                        Automated CPF 2026 calculations, itemized payslips, GIRO exports, and 1-click journal sync into StraitsLedger.
-                    </p>
-                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                                <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#FFFFFF"/>
+                                    <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981"/>
+                                    <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#0A3B32"/>
+                                    <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#FFFFFF"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="font-display text-xl font-bold text-[#0A3B32]">StraitsLedger</h3>
+                                    <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full border border-emerald-200">ACCOUNTING</span>
+                                </div>
+                                <p class="text-xs text-[#4B5563]">IRAS Tax &amp; General Ledger</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#4B5563] leading-relaxed mb-6">
+                            Automate IRAS 9% GST Form 5, issue PayNow Corporate QR invoices, and maintain double-entry books with native InvoiceNow Peppol capabilities.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-700 inline-flex items-center pt-4 border-t border-slate-100">
+                        <i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-xs"></i> Active Suite Component
+                    </span>
+                </div>
+
+                <!-- Pillar 3: StraitsHR -->
+                <a href="https://hr.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                                HR
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">StraitsHR</h3>
+                                    <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full border border-emerald-200">MOM COMPLIANT</span>
+                                </div>
+                                <p class="text-xs text-[#4B5563]">Cloud Payroll &amp; Workforce Engine</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#4B5563] leading-relaxed mb-6">
+                            Automated CPF 2026 statutory rates, itemized payslips, GIRO disbursement files, and 1-click payroll journal posting into StraitsLedger.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center pt-4 border-t border-slate-100">
                         Launch StraitsHR Portal <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                     </span>
                 </a>
@@ -488,10 +524,86 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-[#E8E5DF] py-12 text-center text-xs text-[#4B5563]">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 StraitsLedger. Part of the <a href="https://straits.thethinkthank.com" class="text-[#0A3B32] font-semibold hover:underline">Straits</a> Platform. Singapore Compliance Edition.</p>
+    <!-- Institutional 4-Column Footer -->
+    <footer class="bg-white border-t border-[#E8E5DF] pt-16 pb-12 text-xs text-slate-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-slate-200">
+                <!-- Col 1: Brand & Trust Badges -->
+                <div class="md:col-span-2 pr-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#0A3B32"/>
+                            <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981" fill-opacity="0.85"/>
+                            <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#FFFFFF" stroke="#E8E5DF" stroke-width="1.5"/>
+                            <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#0A3B32"/>
+                        </svg>
+                        <div>
+                            <div class="font-display font-extrabold text-lg text-[#0A3B32] leading-none">STRAITS LEDGER</div>
+                            <div class="text-[9px] font-semibold text-[#10B981] tracking-widest mt-0.5">SINGAPORE CLOUD ACCOUNTING</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 leading-relaxed mb-5 max-w-sm">
+                        Singapore’s sovereign cloud accounting platform purpose-built for micro-SMEs, corporate service providers, and certified accounting practitioners.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                            <i class="fa-solid fa-shield-halved text-emerald-600 mr-1.5"></i> IRAS 9% GST Ready
+                        </span>
+                        <span class="inline-flex items-center text-[10px] font-semibold text-purple-800 bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
+                            <i class="fa-solid fa-qrcode text-purple-600 mr-1.5"></i> PayNow SGQR
+                        </span>
+                        <span class="inline-flex items-center text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">
+                            <i class="fa-solid fa-lock text-slate-600 mr-1.5"></i> 256-bit TLS SSL
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Product -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-wider text-[#0A3B32] mb-4">Core Platform</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#features" class="hover:text-emerald-700 transition">IRAS 9% GST Form 5</a></li>
+                        <li><a href="#features" class="hover:text-emerald-700 transition">PayNow SGQR Invoicing</a></li>
+                        <li><a href="#features" class="hover:text-emerald-700 transition">InvoiceNow (Peppol)</a></li>
+                        <li><a href="#features" class="hover:text-emerald-700 transition">Multi-Currency Ledger</a></li>
+                        <li><a href="#features" class="hover:text-emerald-700 transition">GIRO Statement Feeds</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Straits Ecosystem -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-wider text-[#0A3B32] mb-4">Straits Suite</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="https://straits.thethinkthank.com" target="_blank" class="hover:text-emerald-700 transition">Straits Parent Portal</a></li>
+                        <li><a href="/" class="text-emerald-700 font-semibold">StraitsLedger (Accounting)</a></li>
+                        <li><a href="https://hr.thethinkthank.com" target="_blank" class="hover:text-emerald-700 transition">StraitsHR (Payroll &amp; CPF)</a></li>
+                        <li><a href="#pricing" class="hover:text-emerald-700 transition">Accounting Firm Edition</a></li>
+                        <li><a href="/auth/login" class="hover:text-emerald-700 transition">Client Login Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Compliance & Trust -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-wider text-[#0A3B32] mb-4">Trust &amp; Legal</h4>
+                    <ul class="space-y-2.5">
+                        <li><span class="text-slate-400">Singapore Data Residency</span></li>
+                        <li><span class="text-slate-400">PDPA Compliant</span></li>
+                        <li><span class="text-slate-400">MAS TRM Aligned</span></li>
+                        <li><span class="text-slate-400">SFRS Standard Chart</span></li>
+                        <li><a href="#signup" onclick="openSignupModal()" class="text-emerald-700 font-semibold hover:underline">14-Day Free Trial</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-[11px] gap-4">
+                <p>&copy; 2026 Straits Business Suite Pte. Ltd. All rights reserved. Sovereign Singapore Cloud Infrastructure.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#compliance" class="hover:text-slate-600 transition">Singapore Compliance</a>
+                    <a href="#pricing" class="hover:text-slate-600 transition">Transparent Pricing</a>
+                    <a href="/auth/login" class="hover:text-slate-600 transition">Staff Sign In</a>
+                </div>
+            </div>
         </div>
     </footer>
 
