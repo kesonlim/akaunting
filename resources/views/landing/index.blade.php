@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StraitsLedger — Singapore Cloud Accounting & IRAS Tax</title>
+    <link rel="icon" type="image/svg+xml" href="/img/akaunting-logo-green.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-forest: #0A3B32;
+            --brand-emerald: #10B981;
+            --brand-mint: #ECFDF5;
+            --brand-stone: #E8E5DF;
+            --bg-canvas: #FAFAFA;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-canvas);
+            color: #0F172A;
+        }
+        .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .tabular-num {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+        }
+    </style>
+</head>
+<body class="bg-[#FAFAFA] text-[#0F172A] antialiased">
+
+    <!-- Top Compliance Banner -->
+    <div class="bg-[#0A3B32] text-white text-xs font-medium text-center py-2.5 px-4 flex items-center justify-center gap-2">
+        <span class="bg-[#10B981]/25 text-[#A7F3D0] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">IRAS 9% GST READY</span>
+        <span>Pre-configured standard-rated, zero-rated, and exempt tax codes with PayNow SG QR.</span>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav class="border-b border-[#E8E5DF] bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Brand Lockup -->
+            <a href="/" class="flex items-center space-x-3 text-decoration-none">
+                <svg width="36" height="36" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#0A3B32"/>
+                    <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981" fill-opacity="0.85"/>
+                    <polygon points="60,114 106,87 60,60" fill="#E8E5DF" fill-opacity="0.4"/>
+                    <polygon points="60,114 14,87 60,60" fill="#062620" fill-opacity="0.6"/>
+                    <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#FFFFFF" stroke="#E8E5DF" stroke-width="1.5"/>
+                    <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#0A3B32"/>
+                    <path d="M 40 40 L 70 40 L 70 48 L 50 48 L 50 56 L 76 56 L 76 76 L 40 76 L 40 68 L 66 68 L 66 62 L 40 62 Z" fill="#E8E5DF"/>
+                </svg>
+                <div>
+                    <div class="font-display font-extrabold text-xl tracking-tight text-[#0A3B32] leading-none">STRAITS LEDGER</div>
+                    <div class="text-[10px] font-semibold text-[#10B981] tracking-widest mt-0.5">CLOUD ACCOUNTING &amp; TAX</div>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#4B5563]">
+                <a href="#features" class="hover:text-[#0A3B32] transition">Features</a>
+                <a href="#compliance" class="hover:text-[#0A3B32] transition">IRAS 9% GST</a>
+                <a href="#ecosystem" class="hover:text-[#0A3B32] transition">Straits Suite</a>
+                <a href="#pricing" class="hover:text-[#0A3B32] transition">Pricing</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-3">
+                <a href="/auth/login" class="text-sm font-semibold text-[#0A3B32] hover:bg-[#F4F1EA] px-4 py-2 rounded-lg transition border border-[#E8E5DF]">Log In</a>
+                <a href="#signup" onclick="openSignupModal()" class="bg-[#0A3B32] hover:bg-[#072A24] text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition transform hover:-translate-y-0.5">Start 14-Day Free Trial</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-28 overflow-hidden bg-gradient-to-b from-white via-[#FAFAFA] to-[#F4F1EA] border-b border-[#E8E5DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-[#ECFDF5] border border-[#10B981]/30 px-4 py-1.5 rounded-full text-xs font-semibold text-[#0A3B32] mb-8 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                <span>IRAS 9% GST Form 5 Verified &bull; PayNow SG QR Embedded</span>
+            </div>
+
+            <h1 class="font-display text-4xl md:text-6xl font-extrabold text-[#0A3B32] tracking-tight leading-tight max-w-4xl mx-auto">
+                Singapore’s Sovereign Accounting SaaS for <span class="text-[#10B981]">SMEs &amp; Practices</span>
+            </h1>
+
+            <p class="mt-6 text-lg md:text-xl text-[#4B5563] max-w-2xl mx-auto font-normal leading-relaxed">
+                Automate IRAS GST Form 5 filings, issue PayNow QR e-invoices, and auto-post payroll journals seamlessly from <strong class="text-[#0A3B32]">StraitsHR</strong>.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="openSignupModal()" class="w-full sm:w-auto bg-[#0A3B32] hover:bg-[#072A24] text-white text-base font-bold px-8 py-4 rounded-xl shadow-lg shadow-[#0A3B32]/10 transition transform hover:-translate-y-0.5 flex items-center justify-center">
+                    <i class="fa-solid fa-rocket mr-2"></i> Start 14-Day Free Trial
+                </button>
+                <a href="#features" class="w-full sm:w-auto bg-white hover:bg-[#F4F1EA] text-[#0A3B32] border border-[#E8E5DF] text-base font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center">
+                    <i class="fa-solid fa-play-circle mr-2 text-[#10B981]"></i> Explore Features
+                </a>
+            </div>
+
+            <!-- Hero Feature Bullets -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-[#E8E5DF] pt-8 text-left">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-check-circle text-[#10B981] text-lg"></i>
+                    <span class="text-xs font-semibold text-[#0F172A]">IRAS Form 5 Auto-Calculator</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-check-circle text-[#10B981] text-lg"></i>
+                    <span class="text-xs font-semibold text-[#0F172A]">PayNow SG QR Invoicing</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-check-circle text-[#10B981] text-lg"></i>
+                    <span class="text-xs font-semibold text-[#0F172A]">1-Click StraitsHR Sync</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-check-circle text-[#10B981] text-lg"></i>
+                    <span class="text-xs font-semibold text-[#0F172A]">Multi-Entity Agency Portal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section id="features" class="py-24 bg-white border-b border-[#E8E5DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-[#10B981] uppercase tracking-widest">Built For Singapore Compliance</h2>
+                <p class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">Everything You Need to Run Your Business Finance</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">IRAS 9% GST Form 5</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Pre-configured 9% standard-rated, zero-rated, and exempt tax categories. Auto-populate Boxes 1 through 8 for instant IRAS portal filing.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">PayNow &amp; InvoiceNow</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Embed PayNow Corporate SGQR codes on PDF invoices for 1-scan customer payment collections. Peppol e-Invoicing network ready.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">1-Click StraitsHR Sync</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Seamless 1-click sync of monthly salaries, employer CPF (17%), and SDL from StraitsHR directly into StraitsLedger General Ledger.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-Product Suite Section: Straits Ecosystem -->
+    <section id="ecosystem" class="py-20 bg-[#F4F1EA] border-b border-[#E8E5DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-[#10B981] uppercase tracking-widest">Part of the Straits Operating Platform</span>
+                <h2 class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">Explore the Straits Suite</h2>
+                <p class="text-[#4B5563] text-sm max-w-xl mx-auto mt-2">StraitsLedger connects directly with our parent platform and workforce payroll engine for zero-friction Singapore compliance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Link to Straits (Parent) -->
+                <a href="https://straits.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                            <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="#FFFFFF"/>
+                                <polygon points="60,6 106,33 106,87 60,114 60,60" fill="#10B981"/>
+                                <polygon points="60,20 94,40 94,80 60,100 26,80 26,40" fill="#0A3B32"/>
+                                <path d="M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z" fill="#FFFFFF"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">Straits</h3>
+                                <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full">PARENT PLATFORM</span>
+                            </div>
+                            <p class="text-xs text-[#4B5563]">The Operating System for Singapore Business</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-[#4B5563] leading-relaxed mb-4">
+                        The master holding portal and unified single sign-on connecting accounting, payroll, and statutory tax reporting under one sovereign login.
+                    </p>
+                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center">
+                        Visit Straits Master Portal <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </a>
+
+                <!-- Link to StraitsHR -->
+                <a href="https://hr.thethinkthank.com" target="_blank" class="block bg-white p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] hover:shadow-lg transition group text-decoration-none">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-[#0A3B32] text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                            HR
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">StraitsHR</h3>
+                                <span class="text-[10px] bg-[#ECFDF5] text-[#059669] font-bold px-2 py-0.5 rounded-full">MOM COMPLIANT</span>
+                            </div>
+                            <p class="text-xs text-[#4B5563]">Singapore Cloud Payroll &amp; Workforce Engine</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-[#4B5563] leading-relaxed mb-4">
+                        Automated CPF 2026 calculations, itemized payslips, GIRO exports, and 1-click journal sync into StraitsLedger.
+                    </p>
+                    <span class="text-xs font-bold text-[#0A3B32] group-hover:text-[#10B981] inline-flex items-center">
+                        Launch StraitsHR Portal <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white border-b border-[#E8E5DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-[#10B981] uppercase tracking-widest">Simple &amp; Transparent Pricing</h2>
+                <p class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">Choose the Plan for Your Business</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-[#0A3B32]">Micro-SME Starter</h3>
+                        <p class="text-xs text-[#4B5563] mt-1">For early-stage Singapore businesses</p>
+                        <div class="my-6">
+                            <span class="tabular-num text-4xl font-extrabold text-[#0A3B32]">S$ 19</span>
+                            <span class="text-[#4B5563] text-sm">/ month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-[#4B5563]">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Up to 50 Sales Invoices / mo</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> IRAS 9% GST Form 5 Calculator</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> PayNow SG QR Invoicing</li>
+                        </ul>
+                    </div>
+                    <button onclick="openSignupModal('Starter')" class="mt-8 w-full bg-white hover:bg-[#F4F1EA] text-[#0A3B32] font-semibold py-3 rounded-xl text-xs border border-[#E8E5DF]">Select Starter</button>
+                </div>
+
+                <!-- Pro -->
+                <div class="bg-white p-8 rounded-2xl border-2 border-[#0A3B32] relative flex flex-col justify-between shadow-xl">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A3B32] text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase">Most Popular</div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-[#0A3B32]">Business Pro</h3>
+                        <p class="text-xs text-[#4B5563] mt-1">Includes StraitsHR Payroll Sync</p>
+                        <div class="my-6">
+                            <span class="tabular-num text-4xl font-extrabold text-[#0A3B32]">S$ 49</span>
+                            <span class="text-[#4B5563] text-sm">/ month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-[#4B5563]">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Unlimited Invoices &amp; Expenses</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> IRAS GST Form 5 Auto-Filing Export</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> <strong>1-Click StraitsHR Payroll Sync</strong></li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Multi-Currency SGD/USD/MYR</li>
+                        </ul>
+                    </div>
+                    <button onclick="openSignupModal('Pro')" class="mt-8 w-full bg-[#0A3B32] hover:bg-[#072A24] text-white font-bold py-3 rounded-xl text-xs shadow-md">Start 14-Day Free Trial</button>
+                </div>
+
+                <!-- Agency -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-[#0A3B32]">Accounting Practice</h3>
+                        <p class="text-xs text-[#4B5563] mt-1">For firms managing multiple client UENs</p>
+                        <div class="my-6">
+                            <span class="tabular-num text-4xl font-extrabold text-[#0A3B32]">S$ 89</span>
+                            <span class="text-[#4B5563] text-sm">/ month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-[#4B5563]">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Multi-Entity Client Portal (10 UENs)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Batch IRAS GST Return Export</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-[#10B981] mr-2"></i> Priority Dedicated Support</li>
+                        </ul>
+                    </div>
+                    <button onclick="openSignupModal('Agency')" class="mt-8 w-full bg-white hover:bg-[#F4F1EA] text-[#0A3B32] font-semibold py-3 rounded-xl text-xs border border-[#E8E5DF]">Select Practice Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal: Signup / Free Trial -->
+    <div id="signup-modal" class="fixed inset-0 bg-[#0A3B32]/40 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white border border-[#E8E5DF] rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-[#4B5563] hover:text-[#0F172A]"><i class="fa-solid fa-xmark text-lg"></i></button>
+            
+            <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-1">Start Your StraitsLedger Trial</h3>
+            <p class="text-xs text-[#4B5563] mb-6">Full access for 14 days. No credit card required.</p>
+
+            <form action="/auth/signup" method="POST" class="space-y-4">
+                @csrf
+                <div>
+                    <label class="block text-xs font-semibold text-[#0F172A] mb-1">Company Name</label>
+                    <input type="text" name="company_name" placeholder="e.g. Acme Tech Solutions Pte. Ltd." class="w-full bg-[#FAFAFA] border border-[#E8E5DF] rounded-xl p-3 text-sm text-[#0F172A] focus:ring-2 focus:ring-[#10B981] outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-[#0F172A] mb-1">Work Email</label>
+                    <input type="email" name="email" placeholder="you@company.sg" class="w-full bg-[#FAFAFA] border border-[#E8E5DF] rounded-xl p-3 text-sm text-[#0F172A] focus:ring-2 focus:ring-[#10B981] outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-[#0F172A] mb-1">Password</label>
+                    <input type="password" name="password" placeholder="••••••••" class="w-full bg-[#FAFAFA] border border-[#E8E5DF] rounded-xl p-3 text-sm text-[#0F172A] focus:ring-2 focus:ring-[#10B981] outline-none" required>
+                </div>
+                <button type="submit" class="w-full bg-[#0A3B32] hover:bg-[#072A24] text-white font-bold py-3.5 rounded-xl text-sm shadow-md transition">
+                    Create StraitsLedger Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-[#E8E5DF] py-12 text-center text-xs text-[#4B5563]">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 StraitsLedger. Part of the <a href="https://straits.thethinkthank.com" class="text-[#0A3B32] font-semibold hover:underline">Straits</a> Platform. Singapore Compliance Edition.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openSignupModal(plan = '') {
+            document.getElementById('signup-modal').classList.remove('hidden');
+        }
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

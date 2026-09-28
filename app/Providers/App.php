@@ -38,6 +38,10 @@ class App extends Provider
         // Laravel db fix
         Schema::defaultStringLength(191);
 
+        if (str_contains(config('app.url'), 'https://') || request()->header('X-Forwarded-Proto') === 'https') {
+            \URL::forceScheme('https');
+        }
+
         Paginator::useBootstrap();
 
         Model::preventLazyLoading(config('app.eager_load'));

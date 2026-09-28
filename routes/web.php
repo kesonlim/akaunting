@@ -14,3 +14,11 @@ use Livewire\Livewire;
 
     return Route::get($base . '/vendor/livewire/livewire/dist/livewire.min.js', $handle);
 });
+
+Route::get('/', function () {
+    if (auth()->check()) {
+        return redirect('/1/dashboard');
+    }
+    return view('landing.index');
+});
+

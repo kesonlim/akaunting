@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000.14"><defs><style>.cls-1{fill:#6da252;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M292.3,726.77a306.59,306.59,0,0,1-99.57-215.22H0C3.23,655.16,67,783.81,166.8,873Z"/><path class="cls-1" d="M499.93,0C228,0,6.8,217,0,487.29H192.78c6.7-163.86,141.65-294.63,307.15-294.63,169.78,0,307.42,137.63,307.42,307.41C807.35,614.28,745.06,714,652.61,767L743.31,937C896.44,851.54,1000,687.89,1000,500.07,1000,223.89,776.11,0,499.93,0"/><path class="cls-1" d="M631.11,778.16a307.73,307.73,0,0,1-320.3-35.72L185.27,888.74a500.46,500.46,0,0,0,536.58,59.57Z"/><rect class="cls-1" x="807.35" y="500.07" width="192.65" height="500.07"/></g></g></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'>
+      <rect width='120' height='120' fill='#FAFAFA' rx='28'/>
+      <rect width='118' height='118' x='1' y='1' fill='none' stroke='#E5E7EB' stroke-width='1.5' rx='27'/>
+      
+    <defs>
+      <linearGradient id='frameLeft_straits-ledger' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='#0A3B32'/>
+        <stop offset='100%' stop-color='#062620'/>
+      </linearGradient>
+      <linearGradient id='frameRight_straits-ledger' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='#10B981'/>
+        <stop offset='100%' stop-color='#0A3B32'/>
+      </linearGradient>
+      <linearGradient id='sFacet_straits-ledger' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='#FFFFFF'/>
+        <stop offset='100%' stop-color='#E8E5DF'/>
+      </linearGradient>
+    </defs>
+    <g transform='translate(10, 10) scale(0.833)'>
+      <!-- Outer Hexagon Frame -->
+      <polygon points='60,6 106,33 106,87 60,114 14,87 14,33' fill='url(#frameLeft_straits-ledger)'/>
+      <polygon points='60,6 106,33 106,87 60,114 60,60' fill='url(#frameRight_straits-ledger)' opacity='0.85'/>
+      <polygon points='60,114 106,87 60,60' fill='#E8E5DF' opacity='0.4'/>
+      <polygon points='60,114 14,87 60,60' fill='#062620' opacity='0.6'/>
+
+      <!-- Inner Hexagon Bed -->
+      <polygon points='60,20 94,40 94,80 60,100 26,80 26,40' fill='#FFFFFF' stroke='#E8E5DF' stroke-width='1.5'/>
+
+      <!-- Architectural Embossed 3D S Monogram -->
+      <!-- S Base Shadow -->
+      <path d='M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z' fill='#0A3B32'/>
+      <!-- S Bevel / Top Facet -->
+      <path d='M 40 40 L 70 40 L 70 48 L 50 48 L 50 56 L 76 56 L 76 76 L 40 76 L 40 68 L 66 68 L 66 62 L 40 62 Z' fill='url(#sFacet_straits-ledger)'/>
+      <path d='M 42 42 L 70 42 L 70 48 L 52 48 L 52 56 L 76 56 L 76 62 L 68 64 L 68 70 L 42 70 Z' fill='#10B981' opacity='0.35'/>
+    </g>
+    </svg>

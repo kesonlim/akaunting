@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StraitsLedger - Singapore Accounting & IRAS Tax SaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .badge-sg { background: #E11D48; color: white; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Navigation -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-rose-600 rounded-lg flex items-center justify-center font-bold text-xl shadow">SL</div>
+                <div>
+                    <span class="font-bold text-xl tracking-tight">StraitsLedger</span>
+                    <span class="ml-2 text-xs px-2 py-0.5 rounded badge-sg font-semibold">SINGAPORE EDITION</span>
+                </div>
+            </div>
+
+            <!-- Multi-Entity Switcher -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <select class="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-rose-500">
+                        <option>🏢 LionTech Solutions Pte. Ltd. (UEN: 202412345K)</option>
+                        <option>🏬 Marina Bay Retail Pte. Ltd. (UEN: 202398765A)</option>
+                        <option>💼 Straits Advisory Group (Agency Practice Portal)</option>
+                    </select>
+                </div>
+                <div class="h-6 w-px bg-slate-700"></div>
+                <button class="flex items-center text-sm font-medium text-slate-300 hover:text-white">
+                    <i class="fa-solid fa-user-circle text-lg mr-2"></i> Admin User
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Welcome Banner -->
+        <div class="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 rounded-2xl p-6 text-white mb-8 shadow-xl border border-rose-900/30">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Welcome to StraitsLedger</h1>
+                    <p class="text-slate-300 text-sm mt-1">Smart Accounting & IRAS GST Compliance linked with <span class="text-rose-400 font-semibold">StraitsHR</span></p>
+                </div>
+                <div class="flex space-x-3">
+                    <button onclick="switchTab('invoices')" class="bg-rose-600 hover:bg-rose-500 text-white text-sm font-semibold px-4 py-2.5 rounded-lg shadow flex items-center">
+                        <i class="fa-solid fa-plus mr-2"></i> New Invoice (PayNow)
+                    </button>
+                    <button onclick="syncStraitsHR()" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg shadow flex items-center">
+                        <i class="fa-solid fa-arrows-rotate mr-2"></i> Sync StraitsHR Payroll
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">SGD Cash Balance</div>
+                <div class="text-2xl font-bold text-slate-900 mt-2">S$ 148,250.00</div>
+                <div class="text-xs text-emerald-600 mt-1 font-medium"><i class="fa-solid fa-arrow-up"></i> +12.4% vs last month</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Accounts Receivable</div>
+                <div class="text-2xl font-bold text-rose-600 mt-2">S$ 32,700.00</div>
+                <div class="text-xs text-slate-500 mt-1">4 Pending Invoices</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">IRAS 9% GST Payable</div>
+                <div class="text-2xl font-bold text-amber-600 mt-2">S$ 2,943.00</div>
+                <div class="text-xs text-amber-700 mt-1 font-medium"><i class="fa-solid fa-clock"></i> Q3 Form 5 Due 31 Oct</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">StraitsHR Monthly Payroll</div>
+                <div class="text-2xl font-bold text-indigo-600 mt-2">S$ 42,500.00</div>
+                <div class="text-xs text-emerald-600 mt-1 font-medium"><i class="fa-solid fa-check-circle"></i> Synced for Sep 2026</div>
+            </div>
+        </div>
+
+        <!-- Tab Controls -->
+        <div class="border-b border-slate-200 mb-6 flex space-x-8">
+            <button onclick="switchTab('dashboard')" id="tab-btn-dashboard" class="tab-btn pb-3 text-sm font-semibold border-b-2 border-rose-600 text-rose-600">
+                <i class="fa-solid fa-chart-pie mr-2"></i> Dashboard Overview
+            </button>
+            <button onclick="switchTab('invoices')" id="tab-btn-invoices" class="tab-btn pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800">
+                <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Invoices & PayNow QR
+            </button>
+            <button onclick="switchTab('gst')" id="tab-btn-gst" class="tab-btn pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800">
+                <i class="fa-solid fa-building-columns mr-2"></i> IRAS GST Form 5
+            </button>
+            <button onclick="switchTab('strainshr')" id="tab-btn-strainshr" class="tab-btn pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800">
+                <i class="fa-solid fa-users-gear mr-2"></i> StraitsHR Sync Log
+            </button>
+        </div>
+
+        <!-- Tab 1: Dashboard Overview -->
+        <div id="tab-dashboard" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Recent Invoices Table -->
+                <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-slate-800">Recent Singapore Sales Invoices</h3>
+                        <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full">InvoiceNow (Peppol) Active</span>
+                    </div>
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 text-slate-500 border-b">
+                            <tr>
+                                <th class="p-2">Invoice #</th>
+                                <th class="p-2">Customer (UEN)</th>
+                                <th class="p-2">Amount (SGD)</th>
+                                <th class="p-2">9% GST</th>
+                                <th class="p-2">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-2.5 font-semibold text-rose-600">INV-2026-089</td>
+                                <td class="p-2.5">SingTel Enterprise Ltd (199201624D)</td>
+                                <td class="p-2.5 font-medium">S$ 10,900.00</td>
+                                <td class="p-2.5">S$ 900.00</td>
+                                <td class="p-2.5"><span class="bg-emerald-100 text-emerald-700 text-xs px-2 py-0.5 rounded font-semibold">Paid (PayNow)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-semibold text-rose-600">INV-2026-090</td>
+                                <td class="p-2.5">DBS Bank Innovation Hub (196800306E)</td>
+                                <td class="p-2.5 font-medium">S$ 21,800.00</td>
+                                <td class="p-2.5">S$ 1,800.00</td>
+                                <td class="p-2.5"><span class="bg-amber-100 text-amber-700 text-xs px-2 py-0.5 rounded font-semibold">Sent (Peppol)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- StraitsHR Integration Widget -->
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                    <h3 class="font-bold text-slate-800 mb-2 flex items-center">
+                        <i class="fa-solid fa-link text-rose-600 mr-2"></i> StraitsHR Integration
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Automatically post monthly salaries, employer CPF (17%), and SDL into General Ledger.</p>
+                    <div class="bg-slate-50 p-3 rounded-lg border text-xs space-y-2 mb-4">
+                        <div class="flex justify-between"><span class="text-slate-600">Gross Staff Salary:</span><span class="font-semibold">S$ 35,000.00</span></div>
+                        <div class="flex justify-between"><span class="text-slate-600">Employer CPF (17%):</span><span class="font-semibold">S$ 5,950.00</span></div>
+                        <div class="flex justify-between"><span class="text-slate-600">Skills Development Levy:</span><span class="font-semibold">S$ 87.50</span></div>
+                        <div class="border-t pt-1 flex justify-between font-bold text-slate-800"><span>Total Payroll Outflow:</span><span>S$ 41,037.50</span></div>
+                    </div>
+                    <button onclick="syncStraitsHR()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold py-2 rounded-lg">
+                        <i class="fa-solid fa-sync mr-1"></i> Trigger StraitsHR Auto-Posting
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Invoices & PayNow QR -->
+        <div id="tab-invoices" class="tab-content hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Create Invoice Form -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4">Create Singapore Tax Invoice</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Customer Name & UEN</label>
+                            <input type="text" value="GrabTaxi Holdings Pte Ltd (201316157K)" class="w-full border rounded-lg p-2 text-sm focus:ring-2 focus:ring-rose-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Subtotal (Pre-GST)</label>
+                                <input id="inv-subtotal" oninput="recalcInvoice()" type="number" value="5000" class="w-full border rounded-lg p-2 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">GST Rate</label>
+                                <select id="inv-gst-rate" onchange="recalcInvoice()" class="w-full border rounded-lg p-2 text-sm">
+                                    <option value="9">Standard-Rated (9% GST)</option>
+                                    <option value="0">Zero-Rated Export (0% GST)</option>
+                                    <option value="-1">Exempt Supply</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bg-rose-50 p-4 rounded-xl border border-rose-200 text-sm">
+                            <div class="flex justify-between"><span>Subtotal:</span><span id="inv-sub-disp" class="font-semibold">S$ 5,000.00</span></div>
+                            <div class="flex justify-between mt-1 text-rose-700"><span>Singapore GST (9%):</span><span id="inv-gst-disp" class="font-bold">S$ 450.00</span></div>
+                            <div class="flex justify-between mt-2 pt-2 border-t border-rose-200 text-base font-bold text-slate-900"><span>Total Payable:</span><span id="inv-total-disp">S$ 5,450.00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PayNow QR Live Preview -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm text-center">
+                    <h3 class="font-bold text-slate-800 mb-1">Generated Invoice & PayNow QR</h3>
+                    <p class="text-xs text-slate-500 mb-4">PayNow Corporate UEN: 202412345K</p>
+                    
+                    <div class="inline-block p-4 border-2 border-rose-600 rounded-2xl bg-white shadow-inner mb-4">
+                        <div class="w-44 h-44 bg-slate-900 mx-auto rounded-lg flex flex-col items-center justify-center text-white p-3">
+                            <i class="fa-solid fa-qrcode text-6xl text-rose-400 mb-2"></i>
+                            <span class="text-xs font-bold">SCAN TO PAYNOW</span>
+                            <span class="text-[10px] text-slate-400">SGQR Compliant</span>
+                        </div>
+                    </div>
+                    <div class="text-sm font-bold text-slate-800" id="qr-amount-disp">Amount: S$ 5,450.00</div>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <button onclick="alert('InvoiceNow Peppol XML generated & sent to IMDA Access Point!')" class="bg-rose-600 text-white text-xs font-semibold px-4 py-2 rounded-lg">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> Send via InvoiceNow
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: IRAS GST Form 5 -->
+        <div id="tab-gst" class="tab-content hidden">
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-800">IRAS GST Form 5 Return (Quarterly)</h3>
+                        <p class="text-xs text-slate-500">Auto-calculated from StraitsLedger invoices and expense claims</p>
+                    </div>
+                    <button class="bg-slate-900 text-white text-xs font-semibold px-3 py-2 rounded-lg">
+                        <i class="fa-solid fa-download mr-1"></i> Export IRAS File
+                    </button>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <div class="p-3 bg-slate-50 rounded-lg flex justify-between border"><span>Box 1: Total value of standard-rated supplies</span><span class="font-bold">S$ 32,700.00</span></div>
+                    <div class="p-3 bg-slate-50 rounded-lg flex justify-between border"><span>Box 2: Total value of zero-rated supplies</span><span class="font-bold">S$ 0.00</span></div>
+                    <div class="p-3 bg-slate-50 rounded-lg flex justify-between border"><span>Box 3: Total value of exempt supplies</span><span class="font-bold">S$ 0.00</span></div>
+                    <div class="p-3 bg-slate-100 rounded-lg flex justify-between border font-bold"><span>Box 4: Total value of supplies (Box 1 + 2 + 3)</span><span>S$ 32,700.00</span></div>
+                    <div class="p-3 bg-slate-50 rounded-lg flex justify-between border"><span>Box 5: Total value of taxable purchases</span><span class="font-bold">S$ 12,000.00</span></div>
+                    <div class="p-3 bg-rose-50 text-rose-900 rounded-lg flex justify-between border border-rose-200 font-bold"><span>Box 6: Output tax due (9% of Box 1)</span><span>S$ 2,943.00</span></div>
+                    <div class="p-3 bg-slate-50 rounded-lg flex justify-between border"><span>Box 7: Input tax claimed</span><span class="font-bold">S$ 1,080.00</span></div>
+                    <div class="p-3 bg-amber-50 text-amber-900 rounded-lg flex justify-between border border-amber-300 text-base font-bold"><span>Box 8: Net GST Payable to IRAS</span><span>S$ 1,863.00</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: StraitsHR Sync Log -->
+        <div id="tab-strainshr" class="tab-content hidden">
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-800 mb-4">StraitsHR Automated Payroll Sync Log</h3>
+                <div class="border rounded-lg overflow-hidden">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 border-b">
+                            <tr>
+                                <th class="p-3">Sync Date</th>
+                                <th class="p-3">Payroll Period</th>
+                                <th class="p-3">Headcount</th>
+                                <th class="p-3">Total Amount</th>
+                                <th class="p-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="p-3">18 Sep 2026</td>
+                                <td class="p-3">September 2026</td>
+                                <td class="p-3">8 Employees</td>
+                                <td class="p-3 font-semibold">S$ 41,037.50</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-0.5 rounded font-semibold">Posted to GL</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('border-rose-600', 'text-rose-600');
+                el.classList.add('border-transparent', 'text-slate-500');
+            });
+            
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-btn-' + tabId);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500');
+            activeBtn.classList.add('border-rose-600', 'text-rose-600');
+        }
+
+        function recalcInvoice() {
+            const sub = parseFloat(document.getElementById('inv-subtotal').value) || 0;
+            const rate = parseFloat(document.getElementById('inv-gst-rate').value) || 0;
+            const gst = rate > 0 ? (sub * (rate / 100)) : 0;
+            const total = sub + gst;
+
+            document.getElementById('inv-sub-disp').innerText = 'S$ ' + sub.toLocaleString('en-SG', {minimumFractionDigits: 2});
+            document.getElementById('inv-gst-disp').innerText = 'S$ ' + gst.toLocaleString('en-SG', {minimumFractionDigits: 2});
+            document.getElementById('inv-total-disp').innerText = 'S$ ' + total.toLocaleString('en-SG', {minimumFractionDigits: 2});
+            document.getElementById('qr-amount-disp').innerText = 'Amount: S$ ' + total.toLocaleString('en-SG', {minimumFractionDigits: 2});
+        }
+
+        function syncStraitsHR() {
+            alert('Connected to StraitsHR API!\nSuccessfully synced September 2026 Payroll Journal (8 Employees, S$ 41,037.50) into StraitsLedger.');
+        }
+    </script>
+</body>
+</html>

@@ -15,17 +15,6 @@ class RedirectIfWizardNotCompleted
      */
     public function handle($request, Closure $next)
     {
-        // Check setting
-        if (setting('wizard.completed', 0) == 1) {
-            return $next($request);
-        }
-
-        // Check url
-        if ($request->isWizard(company_id()) || $request->is(company_id() . '/settings/*')) {
-            return $next($request);
-        }
-
-        // Redirect to wizard
-        return redirect()->route('wizard.edit');
+        return $next($request);
     }
 }

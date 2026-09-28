@@ -12,6 +12,7 @@ class Console
     public static function run($string, $timeout = 0)
     {
         $command = Application::formatCommandString($string);
+        $command = str_replace("'php'", "'" . PHP_BINARY . "'", $command);
 
         logger('Console command:: ' . $command);
 
