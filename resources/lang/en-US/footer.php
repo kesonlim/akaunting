@@ -3,11 +3,12 @@
 return [
 
     'version'               => 'Version',
-    'powered'               => 'Powered by Akaunting',
-    'link'                  => 'https://akaunting.com',
-    'software'              => 'Online Accounting Software',
-    'powered_by'            => 'Powered by',
-    'tag_line'              => 'Send invoices, track expenses, and automate accounting with Akaunting. :get_started_url',
+    'powered'               => 'StraitsLedger',
+    'link'                  => 'https://straits.thethinkthank.com',
+    'software'              => 'Straits Business Suite',
+    'powered_by'            => 'Part of',
+    'tag_line'              => 'Singapore Sovereign Cloud Accounting & IRAS Tax Compliance.',
     'get_started'           => 'Get Started',
 
 ];
+

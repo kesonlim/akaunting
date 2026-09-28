@@ -14,7 +14,7 @@
 
         @stack('body_start')
 
-        <div id="app" class="h-screen lg:h-auto bg-no-repeat bg-cover bg-center" style="background-image: url({{ asset('public/img/auth/login-bg.png') }});">
+        <div id="app" class="min-h-screen bg-slate-50 flex items-center justify-center relative overflow-hidden" style="background: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.06) 0%, rgba(250, 250, 250, 1) 85%);">
             <div class="relative w-full lg:max-w-7xl flex items-center m-auto">
                 <x-layouts.auth.slider>
                     {!! $slider ?? '' !!}

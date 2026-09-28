@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StraitsLedger — Singapore Cloud Accounting & IRAS Tax</title>
-    <link rel="icon" type="image/svg+xml" href="/img/akaunting-logo-green.svg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpolygon points='60,6 106,33 106,87 60,114 14,87 14,33' fill='%230A3B32'/%3E%3Cpolygon points='60,6 106,33 106,87 60,114 60,60' fill='%2310B981'/%3E%3Cpolygon points='60,20 94,40 94,80 60,100 26,80 26,40' fill='%23FFFFFF'/%3E%3Cpath d='M 42 42 L 72 42 L 72 50 L 52 50 L 52 58 L 78 58 L 78 78 L 42 78 L 42 70 L 68 70 L 68 64 L 42 64 Z' fill='%230A3B32'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,7 +102,7 @@
             </div>
 
             <!-- Hero Feature Bullets -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-[#E8E5DF] pt-8 text-left">
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-[#E8E5DF] pt-8 text-left">
                 <div class="flex items-center space-x-3">
                     <i class="fa-solid fa-check-circle text-[#10B981] text-lg"></i>
                     <span class="text-xs font-semibold text-[#0F172A]">IRAS Form 5 Auto-Calculator</span>
@@ -120,6 +120,127 @@
                     <span class="text-xs font-semibold text-[#0F172A]">Multi-Entity Agency Portal</span>
                 </div>
             </div>
+
+            <!-- Hero Product Mockup / Interactive Financial Console -->
+            <div class="mt-14 max-w-5xl mx-auto rounded-2xl bg-white border border-[#E8E5DF] shadow-2xl overflow-hidden text-left">
+                <!-- Window Header -->
+                <div class="bg-[#F8FAFC] border-b border-[#E8E5DF] px-4 py-3 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                        <span class="text-xs font-semibold text-slate-500 ml-2">app.straitsledger.sg &bull; Acme Tech Pte. Ltd. (UEN: 202418920K)</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>IRAS 9% GST Active</span>
+                    </div>
+                </div>
+
+                <!-- Dashboard KPI Banner -->
+                <div class="p-6 bg-slate-50/60 border-b border-[#E8E5DF] grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                        <div class="text-[11px] font-medium text-slate-500">Q3 Operating Revenue</div>
+                        <div class="text-xl font-extrabold text-[#0A3B32] mt-1 tabular-num">S$ 248,920.00</div>
+                        <div class="text-[10px] font-semibold text-emerald-600 mt-1 flex items-center">
+                            <i class="fa-solid fa-arrow-trend-up mr-1"></i> +18.4% vs Q2
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                        <div class="text-[11px] font-medium text-slate-500">IRAS Form 5 Net Payable</div>
+                        <div class="text-xl font-extrabold text-slate-900 mt-1 tabular-num">S$ 14,210.50</div>
+                        <div class="text-[10px] font-semibold text-slate-500 mt-1">Due 31 Oct 2026</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                        <div class="text-[11px] font-medium text-slate-500">PayNow SGQR Invoicing</div>
+                        <div class="text-xl font-extrabold text-purple-700 mt-1 tabular-num">S$ 82,450.00</div>
+                        <div class="text-[10px] font-semibold text-purple-600 mt-1">Instant Bank Settled</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                        <div class="text-[11px] font-medium text-slate-500">StraitsHR Payroll Sync</div>
+                        <div class="text-xl font-extrabold text-blue-700 mt-1 tabular-num">S$ 42,100.00</div>
+                        <div class="text-[10px] font-semibold text-blue-600 mt-1">14 Pax &bull; CPF Posted</div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Content Preview Split -->
+                <div class="p-6 grid grid-cols-1 md:grid-cols-12 gap-6 bg-white">
+                    <!-- Left: IRAS Form 5 e-Tax Widget -->
+                    <div class="md:col-span-7 bg-[#FAFAFA] border border-slate-200/80 rounded-xl p-5">
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-file-invoice text-emerald-600"></i>
+                                <span class="font-display font-bold text-sm text-[#0A3B32]">IRAS GST Return (Form 5)</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Pre-Audit Verified</span>
+                        </div>
+                        <div class="mt-4 space-y-2.5 text-xs">
+                            <div class="flex justify-between py-1.5 border-b border-slate-200/60">
+                                <span class="text-slate-600">Box 1: Standard-Rated Supplies (9%)</span>
+                                <span class="font-bold text-slate-900 tabular-num">S$ 215,000.00</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 border-b border-slate-200/60">
+                                <span class="text-slate-600">Box 6: Output Tax Due</span>
+                                <span class="font-bold text-slate-900 tabular-num">S$ 19,350.00</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 border-b border-slate-200/60">
+                                <span class="text-slate-600">Box 7: Input Tax &amp; Import Claimed</span>
+                                <span class="font-bold text-emerald-700 tabular-num">-S$ 5,139.50</span>
+                            </div>
+                            <div class="flex justify-between py-2 bg-emerald-50/80 px-3 rounded-lg border border-emerald-100 font-bold">
+                                <span class="text-[#0A3B32]">Box 8: Net GST to be Paid to IRAS</span>
+                                <span class="text-[#0A3B32] tabular-num text-sm">S$ 14,210.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Live Journal Feeds -->
+                    <div class="md:col-span-5 bg-[#FAFAFA] border border-slate-200/80 rounded-xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                                <span class="font-display font-bold text-sm text-[#0A3B32]">Singapore Smart Feeds</span>
+                                <span class="text-[10px] font-semibold text-slate-500">Live Sync</span>
+                            </div>
+                            <div class="mt-3 space-y-3">
+                                <div class="flex items-center justify-between text-xs">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-7 h-7 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-[11px] font-bold">QR</div>
+                                        <div>
+                                            <div class="font-semibold text-slate-800">DBS PayNow Inbound</div>
+                                            <div class="text-[10px] text-slate-400">Temasek Marine &bull; Auto-reconciled</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-emerald-600 tabular-num">+S$ 4,895.00</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-7 h-7 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-[11px] font-bold">HR</div>
+                                        <div>
+                                            <div class="font-semibold text-slate-800">StraitsHR Payroll Sync</div>
+                                            <div class="text-[10px] text-slate-400">CPF (17%) &amp; SDL Journal Posted</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-slate-700 tabular-num">-S$ 42,100.00</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-7 h-7 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center text-[11px] font-bold">PE</div>
+                                        <div>
+                                            <div class="font-semibold text-slate-800">InvoiceNow (Peppol)</div>
+                                            <div class="text-[10px] text-slate-400">GovTech Singapore &bull; E-Tax Ack</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-slate-700 tabular-num">+S$ 18,200.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500">
+                            <span>MAS TRM Guidelines Aligned</span>
+                            <span class="font-semibold text-emerald-700">Audit-Trail Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -129,39 +250,79 @@
             <div class="text-center mb-16">
                 <h2 class="text-xs font-bold text-[#10B981] uppercase tracking-widest">Built For Singapore Compliance</h2>
                 <p class="font-display text-3xl font-extrabold text-[#0A3B32] mt-2">Everything You Need to Run Your Business Finance</p>
+                <p class="text-slate-500 text-sm max-w-2xl mx-auto mt-2">Engineered specifically around Singapore corporate statutory reporting, IRAS tax codes, and banking rails.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                <!-- Feature 1: IRAS Form 5 -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
                     <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
+                    <div class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-emerald-200">IRAS E-TAX READY</div>
                     <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">IRAS 9% GST Form 5</h3>
                     <p class="text-[#4B5563] text-sm leading-relaxed">
-                        Pre-configured 9% standard-rated, zero-rated, and exempt tax categories. Auto-populate Boxes 1 through 8 for instant IRAS portal filing.
+                        Pre-configured 9% standard-rated, zero-rated, and exempt tax categories. Auto-populate Boxes 1 through 8 for instant IRAS portal filing without manual spreadsheets.
                     </p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                <!-- Feature 2: PayNow & InvoiceNow -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
                     <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-qrcode"></i>
                     </div>
+                    <div class="text-[10px] font-bold text-purple-800 bg-purple-50 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-purple-200">SGQR &bull; PEPPOL</div>
                     <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">PayNow &amp; InvoiceNow</h3>
                     <p class="text-[#4B5563] text-sm leading-relaxed">
-                        Embed PayNow Corporate SGQR codes on PDF invoices for 1-scan customer payment collections. Peppol e-Invoicing network ready.
+                        Embed PayNow Corporate SGQR codes on customer PDF invoices for 1-scan payment collection. Fully compliant with Singapore IMDA Peppol InvoiceNow standard.
                     </p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm">
+                <!-- Feature 3: StraitsHR Sync -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
                     <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-arrows-rotate"></i>
                     </div>
+                    <div class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-blue-200">STRAITS SUITE ECOSYSTEM</div>
                     <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">1-Click StraitsHR Sync</h3>
                     <p class="text-[#4B5563] text-sm leading-relaxed">
-                        Seamless 1-click sync of monthly salaries, employer CPF (17%), and SDL from StraitsHR directly into StraitsLedger General Ledger.
+                        Seamless 1-click sync of monthly wages, employer CPF (17%), and SDL from StraitsHR directly into StraitsLedger General Ledger. Zero duplicate journal entries.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Multi-Currency SGD/USD/MYR -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <div class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-emerald-200">MAS EXCHANGE FEEDS</div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">Multi-Currency Ledger</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Full multi-currency support (SGD, USD, MYR, EUR, GBP) with automatic realized and unrealized FX gain/loss computations aligned with Singapore accounting standards (SFRS).
+                    </p>
+                </div>
+
+                <!-- Feature 5: Bank Feeds & GIRO Reconciliation -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-slate-200">DBS &bull; OCBC &bull; UOB</div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">Bank &amp; GIRO Reconciliation</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Import standard corporate bank statements and export GIRO payment files. Smart matching reconciles invoices, bills, and payroll disbursements in minutes.
+                    </p>
+                </div>
+
+                <!-- Feature 6: Multi-Entity Agency Portal -->
+                <div class="bg-[#FAFAFA] p-8 rounded-2xl border border-[#E8E5DF] hover:border-[#10B981] transition shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-[#ECFDF5] text-[#059669] rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <div class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full inline-block mb-3 border border-emerald-200">FOR CORPORATE PRACTICES</div>
+                    <h3 class="font-display text-xl font-bold text-[#0A3B32] mb-2">Multi-Entity Portal</h3>
+                    <p class="text-[#4B5563] text-sm leading-relaxed">
+                        Designed for corporate secretaries, accounting firms, and conglomerates managing multiple Singapore UENs under a unified console with granular team permissions.
                     </p>
                 </div>
             </div>
