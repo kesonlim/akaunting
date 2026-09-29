@@ -110,7 +110,11 @@ trait Users
         $company_id = company_id() ?: $this->getFirstCompanyOfUser()?->id;
 
         if (empty($company_id)) {
-            return route('login');
+            if (\Illuminate\Support\Facades\Route::has('platform.dashboard')) {
+                return route('platform.dashboard');
+            }
+
+            return url('/');
         }
 
         return route($route_name, ['company_id' => $company_id]);
