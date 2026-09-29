@@ -45,6 +45,7 @@
         "barryvdh/laravel-ide-helper": "^2.9",
         "bkwld/cloner": "^3.10",
         "bugsnag/bugsnag-laravel": "^2.24",
+        "chillerlan/php-qrcode": "^6.0",
         "doctrine/dbal": "^3.1",
         "genealabs/laravel-model-caching": "^0.13",
         "graham-campbell/markdown": "^15.0",

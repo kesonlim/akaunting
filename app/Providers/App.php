@@ -38,7 +38,8 @@ class App extends Provider
         // Laravel db fix
         Schema::defaultStringLength(191);
 
-        if (str_contains(config('app.url'), 'https://') || request()->header('X-Forwarded-Proto') === 'https') {
+        $isLocalHost = in_array(request()->getHost(), ['127.0.0.1', 'localhost']);
+        if (!$isLocalHost && (str_contains(config('app.url'), 'https://') || request()->header('X-Forwarded-Proto') === 'https')) {
             \URL::forceScheme('https');
         }
 

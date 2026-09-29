@@ -17,8 +17,18 @@ use Livewire\Livewire;
 
 Route::get('/', function () {
     if (auth()->check()) {
-        return redirect('/1/dashboard');
+        return redirect()->route('platform.dashboard');
     }
     return view('landing.index');
+});
+
+// StraitsLedger SaaS Master Control Plane (Founder & CEO Console)
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('/platform', [App\Http\Controllers\Platform\SuperAdminController::class, 'index'])->name('platform.dashboard');
+    Route::get('/superadmin', function () {
+        return redirect()->route('platform.dashboard');
+    });
+    Route::get('/platform/switch/{company}', [App\Http\Controllers\Platform\SuperAdminController::class, 'switchTenant'])->name('platform.switch');
+    Route::post('/platform/provision', [App\Http\Controllers\Platform\SuperAdminController::class, 'provision'])->name('platform.provision');
 });
 

@@ -339,6 +339,10 @@
 
     <div class="row mt-4 clearfix">
         <div class="col-60 ltr:float-left rtl:float-right">
+            @if (($type ?? '') == 'invoice' || ($document->type ?? '') == 'invoice')
+                @include('components.documents.template.paynow-qr')
+            @endif
+
             <div class="text p-index-right break-words">
                 @stack('notes_input_start')
                     @if ($hideNote)

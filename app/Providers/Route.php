@@ -28,6 +28,13 @@ class Route extends Provider
      */
     protected $namespace = 'App\Http\Controllers';
 
+    public function boot()
+    {
+        Facade::pattern('company_id', '[0-9]+');
+
+        parent::boot();
+    }
+
     /**
      * Register any application services.
      *
@@ -228,6 +235,7 @@ class Route extends Provider
     protected function mapAdminRoutes()
     {
         Facade::prefix('{company_id}')
+            ->where(['company_id' => '[0-9]+'])
             ->middleware('admin')
             ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
