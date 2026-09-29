@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('landing.index');
 });
 
+Route::get('/switch-from-wave', function () {
+    return view('landing.switch-from-wave');
+})->name('landing.switch-from-wave');
+
 // StraitsLedger SaaS Master Control Plane (Founder & CEO Console)
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/platform', [App\Http\Controllers\Platform\SuperAdminController::class, 'index'])->name('platform.dashboard');
