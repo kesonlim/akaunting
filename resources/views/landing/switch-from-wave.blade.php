@@ -7,6 +7,7 @@
     <meta name="description" content="Wave cancelled international bank feeds and payment support. Migrate from Wave to StraitsLedger seamlessly with 1-click historical import, IRAS 9% GST readiness, and native Singapore PayNow QR invoices.">
     <meta name="keywords" content="migrate wave to singapore accounting, wave apps alternative singapore, switch from waveapps, singapore accounting software, paynow qr invoicing, iras gst accounting">
     <link rel="canonical" href="https://ledger.thethinkthank.com/switch-from-wave">
+    <link rel="icon" type="image/png" href="https://ledger.thethinkthank.com/public/img/favicon.png">
 
     <!-- Open Graph / Social Meta -->
     <meta property="og:title" content="Switch from WaveApps to StraitsLedger | Built for Singapore Businesses">
