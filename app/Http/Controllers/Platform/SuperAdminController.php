@@ -32,7 +32,7 @@ class SuperAdminController extends Controller
 
             // Tier assignment
             $tiers = [
-                1 => ['plan' => 'Enterprise Sovereign', 'price' => 299, 'badge' => 'bg-emerald-100 text-emerald-800 border-emerald-300'],
+                1 => ['plan' => 'Enterprise', 'price' => 299, 'badge' => 'bg-emerald-100 text-emerald-800 border-emerald-300'],
                 2 => ['plan' => 'Straits Internal Demo', 'price' => 0, 'badge' => 'bg-slate-100 text-slate-800 border-slate-300'],
                 3 => ['plan' => 'Business Pro', 'price' => 49, 'badge' => 'bg-blue-100 text-blue-800 border-blue-300'],
                 4 => ['plan' => 'Accounting Practice', 'price' => 89, 'badge' => 'bg-purple-100 text-purple-800 border-purple-300'],

@@ -19,7 +19,7 @@ class AddXHeader
 
         // Check if we should add header
         if (method_exists($response, 'header')) {
-            $response->header('X-StraitsLedger', 'Singapore Sovereign Cloud Accounting');
+            $response->header('X-StraitsLedger', 'Singapore Cloud Accounting');
             $response->header('X-Content-Type-Options', 'nosniff');
             $response->header('X-Frame-Options', 'SAMEORIGIN');
             $response->header('Referrer-Policy', 'strict-origin-when-cross-origin');

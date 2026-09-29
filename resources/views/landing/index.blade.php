@@ -94,7 +94,7 @@
             </div>
 
             <h1 class="font-display text-4xl md:text-6xl font-extrabold text-[#0A3B32] tracking-tight leading-tight max-w-4xl mx-auto">
-                Singapore’s Sovereign Accounting SaaS for <span class="text-[#10B981]">SMEs &amp; Practices</span>
+                Singapore’s Cloud Accounting Platform for <span class="text-[#10B981]">SMEs &amp; Practices</span>
             </h1>
 
             <p class="mt-6 text-lg md:text-xl text-[#4B5563] max-w-2xl mx-auto font-normal leading-relaxed">
@@ -307,7 +307,7 @@
                     <div class="text-xs text-slate-500 mt-1 font-medium">Bank-Grade TLS / SSL Encryption</div>
                 </div>
                 <div>
-                    <div class="font-display font-extrabold text-2xl text-[#0A3B32]">SG Sovereign</div>
+                    <div class="font-display font-extrabold text-2xl text-[#0A3B32]">SG Compliant</div>
                     <div class="text-xs text-slate-500 mt-1 font-medium">Singapore PDPA &amp; MAS TRM Aligned</div>
                 </div>
             </div>
@@ -420,7 +420,7 @@
                             <th class="py-5 px-6 text-sm font-extrabold text-[#0A3B32] bg-[#ECFDF5]/60 border-x border-[#10B981]/30 w-1/4">
                                 <div class="flex items-center space-x-2">
                                     <span>StraitsLedger</span>
-                                    <span class="text-[10px] font-bold bg-[#10B981] text-white px-2 py-0.5 rounded-full uppercase">Sovereign SG</span>
+                                    <span class="text-[10px] font-bold bg-[#10B981] text-white px-2 py-0.5 rounded-full uppercase">SG Compliant</span>
                                 </div>
                             </th>
                             <th class="py-5 px-6 text-sm font-semibold text-slate-600 w-1/5">Legacy Cloud SaaS<br><span class="text-[11px] font-normal text-slate-400">(Xero / QuickBooks)</span></th>
@@ -520,7 +520,7 @@
                                 <div class="text-[11px] font-normal text-slate-500 mt-0.5">Singapore corporate data residency and strict regulatory jurisdiction</div>
                             </td>
                             <td class="py-4 px-6 font-bold text-emerald-800 bg-[#ECFDF5]/30 border-x border-[#10B981]/20">
-                                <i class="fa-solid fa-circle-check text-emerald-600 mr-1.5 text-sm"></i> Singapore Sovereign Cloud
+                                <i class="fa-solid fa-circle-check text-emerald-600 mr-1.5 text-sm"></i> Singapore Cloud
                             </td>
                             <td class="py-4 px-6 text-slate-600">
                                 Foreign multi-tenant cloud storage
@@ -646,7 +646,7 @@
                                     <h3 class="font-display text-xl font-bold text-[#0A3B32] group-hover:text-[#10B981] transition">Straits</h3>
                                     <span class="text-[10px] bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded-full border border-slate-200">PARENT OS</span>
                                 </div>
-                                <p class="text-xs text-[#4B5563]">The Sovereign Operating System</p>
+                                <p class="text-xs text-[#4B5563]">The Straits Platform</p>
                             </div>
                         </div>
                         <p class="text-sm text-[#4B5563] leading-relaxed mb-6">
@@ -991,7 +991,7 @@
 
             <!-- Bottom Copyright Bar -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-[11px] gap-4">
-                <p>&copy; 2026 Straits &bull; A business unit of Think Thank Pte Ltd (UEN: 200415432K). All rights reserved. Sovereign Singapore Cloud Infrastructure.</p>
+                <p>&copy; 2026 Straits &bull; A business unit of Think Thank Pte Ltd (UEN: 200415432K). All rights reserved. Singapore Cloud Infrastructure.</p>
                 <div class="flex items-center space-x-6">
                     <a href="#comparison" class="hover:text-slate-600 transition">Why Us</a>
                     <a href="#migration" class="hover:text-slate-600 transition">Migration Guide</a>

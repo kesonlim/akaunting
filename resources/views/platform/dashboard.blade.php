@@ -329,7 +329,7 @@
                         <select name="plan_tier" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A3B32] text-sm">
                             <option value="Business Pro">Business Pro (S$49/mo)</option>
                             <option value="Accounting Practice">Accounting Practice (S$89/mo)</option>
-                            <option value="Enterprise Sovereign">Enterprise Sovereign (S$299/mo)</option>
+                            <option value="Enterprise">Enterprise (S$299/mo)</option>
                             <option value="Micro-SME Starter">Micro-SME Starter (S$19/mo)</option>
                         </select>
                     </div>
