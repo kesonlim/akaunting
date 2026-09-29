@@ -1,6 +1,6 @@
 @php
-    $companyUen = setting('company.tax_number', setting('general.company_tax_number', '202401892K'));
-    $companyName = setting('company.name', setting('general.company_name', config('app.name', 'StraitsLedger Pte. Ltd.')));
+    $companyUen = setting('company.tax_number', setting('general.company_tax_number', '200415432K'));
+    $companyName = setting('company.name', setting('general.company_name', config('app.name', 'Think Thank Pte Ltd')));
     $dueAmount = $document->amount_due ?? $document->amount;
     $currencyCode = $document->currency_code ?? 'SGD';
     $qrDataUri = \App\Utilities\PayNow::generateQrCodeDataUri($companyUen, $dueAmount, $document->document_number, $companyName);

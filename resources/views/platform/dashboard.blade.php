@@ -360,7 +360,7 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div>&copy; 2026 StraitsLedger SaaS &bull; Straits Business Suite Singapore. All rights reserved.</div>
+            <div>&copy; 2026 Straits &bull; A business unit of Think Thank Pte Ltd (UEN: 200415432K). All rights reserved.</div>
             <div class="flex items-center space-x-4 text-slate-400">
                 <span>IMDA Peppol Ready</span>
                 <span>&bull;</span>

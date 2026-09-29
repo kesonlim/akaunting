@@ -3,9 +3,18 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const fontFamily = defaultTheme.fontFamily;
 
 fontFamily['sans'] = [
-  'Quicksand', // <-- Quicksand is default sans font now
+  'Inter',
+  '-apple-system',
+  'BlinkMacSystemFont',
   'system-ui',
-  // <-- Can provide more font fallbacks here
+  'sans-serif',
+];
+
+fontFamily['display'] = [
+  'Plus Jakarta Sans',
+  '-apple-system',
+  'BlinkMacSystemFont',
+  'sans-serif',
 ];
 
 module.exports = {

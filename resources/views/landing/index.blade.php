@@ -991,7 +991,7 @@
 
             <!-- Bottom Copyright Bar -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-[11px] gap-4">
-                <p>&copy; 2026 Straits Business Suite Pte. Ltd. All rights reserved. Sovereign Singapore Cloud Infrastructure.</p>
+                <p>&copy; 2026 Straits &bull; A business unit of Think Thank Pte Ltd (UEN: 200415432K). All rights reserved. Sovereign Singapore Cloud Infrastructure.</p>
                 <div class="flex items-center space-x-6">
                     <a href="#comparison" class="hover:text-slate-600 transition">Why Us</a>
                     <a href="#migration" class="hover:text-slate-600 transition">Migration Guide</a>
