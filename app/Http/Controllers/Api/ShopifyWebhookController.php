@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Abstracts\Http\Controller;
 use Illuminate\Http\Request;
 use App\Models\Common\Company;
 use App\Services\Shopify\ShopifySyncService;
