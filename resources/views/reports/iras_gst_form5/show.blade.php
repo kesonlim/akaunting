@@ -10,12 +10,17 @@
     ></x-slot>
 
     <x-slot name="buttons">
-        <x-link href="{{ url($class->getUrl('print')) }}" target="_blank" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-lg ltr:mr-2 rtl:ml-2">
+        <x-link href="{{ route('reports.print', $class->model->id) }}" target="_blank" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-lg ltr:mr-2 rtl:ml-2">
             <span class="material-icons-outlined text-base ltr:mr-1 rtl:ml-1">print</span>
             {{ trans('general.print') }}
         </x-link>
 
-        <x-link href="{{ url($class->getUrl('export')) }}" class="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg">
+        <x-link href="{{ route('reports.pdf', $class->model->id) }}" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-lg ltr:mr-2 rtl:ml-2">
+            <span class="material-icons-outlined text-base ltr:mr-1 rtl:ml-1">picture_as_pdf</span>
+            PDF
+        </x-link>
+
+        <x-link href="{{ route('reports.export', $class->model->id) }}" class="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg">
             <span class="material-icons-outlined text-base ltr:mr-1 rtl:ml-1">file_download</span>
             {{ trans('general.export') }}
         </x-link>
@@ -27,14 +32,14 @@
                 <span class="material-icons pointer-events-none">more_horiz</span>
             </x-slot>
 
-            <x-dropdown.link href="{{ url($class->getUrl('pdf')) }}" id="show-more-actions-pdf-report">
+            <x-dropdown.link href="{{ route('reports.pdf', $class->model->id) }}" id="show-more-actions-pdf-report">
                 {{ trans('general.download_pdf') }}
             </x-dropdown.link>
 
             <x-dropdown.divider />
 
             @can('update-common-reports')
-                <x-dropdown.link href="{{ url($class->getUrl('edit')) }}" id="index-more-actions-edit-report">
+                <x-dropdown.link href="{{ route('reports.edit', $class->model->id) }}" id="index-more-actions-edit-report">
                     {{ trans('general.edit') }}
                 </x-dropdown.link>
             @endcan
@@ -53,10 +58,10 @@
             @include($class->views['filter'])
 
             {{-- Official IRAS Header Card --}}
-            <div class="mt-6 mb-8 rounded-2xl bg-gradient-to-r from-[#0A3B32] to-[#0f5145] p-6 text-white shadow-xl">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-emerald-700/60 pb-5">
+            <div class="mt-6 mb-8 rounded-2xl p-6 text-white shadow-xl" style="background: linear-gradient(135deg, #0A3B32 0%, #0f5145 100%); color: #ffffff;">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-emerald-600/40 pb-5">
                     <div class="flex items-center space-x-3.5 rtl:space-x-reverse">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-400/20 flex items-center justify-center border border-emerald-400/30">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
                             <span class="material-icons-outlined text-3xl text-emerald-300">account_balance</span>
                         </div>
                         <div>
@@ -85,20 +90,20 @@
                 {{-- Taxpayer Metadata Grid --}}
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-5 text-sm">
                     <div>
-                        <div class="text-xs text-emerald-300/80 font-medium">Taxable Person / Entity</div>
-                        <div class="font-bold text-white mt-0.5">{{ $class->company_name }}</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider" style="color: #6ee7b7;">Taxable Person / Entity</div>
+                        <div class="font-bold text-white text-base mt-0.5">{{ $class->company_name }}</div>
                     </div>
                     <div>
-                        <div class="text-xs text-emerald-300/80 font-medium">Singapore UEN / GST Reg No.</div>
-                        <div class="font-bold text-white mt-0.5">{{ $class->company_uen }}</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider" style="color: #6ee7b7;">Singapore UEN / GST Reg No.</div>
+                        <div class="font-bold text-white text-base mt-0.5">{{ $class->company_uen }}</div>
                     </div>
                     <div>
-                        <div class="text-xs text-emerald-300/80 font-medium">Accounting Basis</div>
-                        <div class="font-bold text-white mt-0.5 capitalize">{{ $class->getBasis() }}</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider" style="color: #6ee7b7;">Accounting Basis</div>
+                        <div class="font-bold text-white text-base mt-0.5 capitalize">{{ $class->getBasis() }}</div>
                     </div>
                     <div>
-                        <div class="text-xs text-emerald-300/80 font-medium">Statutory Filing Deadline</div>
-                        <div class="font-bold text-emerald-200 mt-0.5">{{ $class->filing_due_date }}</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider" style="color: #6ee7b7;">Statutory Filing Deadline</div>
+                        <div class="font-bold text-base mt-0.5" style="color: #34d399;">{{ $class->filing_due_date }}</div>
                     </div>
                 </div>
             </div>
