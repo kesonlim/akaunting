@@ -26,6 +26,9 @@ Route::get('/switch-from-wave', function () {
     return view('landing.switch-from-wave');
 })->name('landing.switch-from-wave');
 
+// Straits Master Telemetry Endpoint (CORS enabled for straits.thethinkthank.com)
+Route::get('/api/platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry']);
+
 // StraitsLedger SaaS Master Control Plane (Founder & CEO Console)
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/platform', [App\Http\Controllers\Platform\SuperAdminController::class, 'index'])->name('platform.dashboard');
