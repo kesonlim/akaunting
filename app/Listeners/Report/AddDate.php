@@ -15,6 +15,7 @@ class AddDate extends Listener
         \App\Reports\ProfitLoss::class,
         \App\Reports\TaxSummary::class,
         \App\Reports\DiscountSummary::class,
+        \App\Reports\IrasGstForm5::class,
     ];
 
     /**

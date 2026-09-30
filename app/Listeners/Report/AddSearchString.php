@@ -14,6 +14,7 @@ class AddSearchString extends Listener
         'App\Reports\ProfitLoss',
         'App\Reports\TaxSummary',
         'App\Reports\DiscountSummary',
+        'App\Reports\IrasGstForm5',
     ];
 
     /**

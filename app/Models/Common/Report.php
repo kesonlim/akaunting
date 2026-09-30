@@ -81,6 +81,11 @@ class Report extends Model
         return $query->where($this->qualifyColumn('class'), '=', 'App\\Reports\\TaxSummary');
     }
 
+    public function scopeIrasGstForm5(Builder $query): Builder
+    {
+        return $query->where($this->qualifyColumn('class'), '=', 'App\\Reports\\IrasGstForm5');
+    }
+
     /**
      * Get the alias based on class.
      *

@@ -65,6 +65,13 @@ class Reports extends Seeder
                 'description' => trans('demo.reports.tax'),
                 'settings' => ['period' => 'quarterly', 'basis' => 'accrual'],
             ],
+            [
+                'company_id' => $company_id,
+                'class' => \App\Reports\IrasGstForm5::class,
+                'name' => 'IRAS GST Form 5',
+                'description' => 'Official Inland Revenue Authority of Singapore (IRAS) GST Return Form 5 (Boxes 1 to 13)',
+                'settings' => ['period' => 'quarterly', 'basis' => 'accrual'],
+            ],
         ];
 
         foreach ($rows as $row) {

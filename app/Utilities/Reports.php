@@ -23,6 +23,7 @@ class Reports
             'App\Reports\TaxSummary',
             'App\Reports\ProfitLoss',
             'App\Reports\DiscountSummary',
+            'App\Reports\IrasGstForm5',
         ];
 
         Module::enabled()->each(function ($module) use (&$list) {
@@ -76,6 +77,10 @@ class Reports
 
     public static function canShow($class)
     {
+        if ($class === 'App\Reports\IrasGstForm5') {
+            return user()->can('read-common-reports') || user()->can(static::getPermission($class));
+        }
+
         return (static::isModuleEnabled($class) && static::canRead($class));
     }
 
@@ -86,6 +91,10 @@ class Reports
 
     public static function canRead($class)
     {
+        if ($class === 'App\Reports\IrasGstForm5') {
+            return user()->can('read-common-reports') || user()->can(static::getPermission($class));
+        }
+
         return user()->can(static::getPermission($class));
     }
 
