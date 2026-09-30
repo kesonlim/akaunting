@@ -1,8 +1,9 @@
-@extends('layouts.admin')
+<x-layouts.admin>
+    <x-slot name="title">
+        Singapore Bank Statement Reconciler & Transaction Matcher
+    </x-slot>
 
-@section('title', 'Singapore Bank Statement Reconciler & Transaction Matcher')
-
-@section('content')
+    <x-slot name="content">
     <div class="my-6">
         {{-- Hero Header Card --}}
         <div class="mb-8 rounded-2xl p-6 text-white shadow-xl" style="background: linear-gradient(135deg, #0A3B32 0%, #0f5145 100%); color: #ffffff;">
@@ -213,4 +214,5 @@
             }
         }
     </script>
-@endsection
+    </x-slot>
+</x-layouts.admin>
