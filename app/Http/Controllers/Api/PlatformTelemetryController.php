@@ -38,27 +38,32 @@ class PlatformTelemetryController extends Controller
                 ?? $comp->currency 
                 ?? 'SGD';
 
+            $plan = DB::table('settings')->where('company_id', $comp->id)->where('key', 'subscription.plan')->value('value') ?? ($comp->id == 1 ? 'Complimentary Lifetime' : 'Professional (S$49/mo)');
+            $compMrr = (float)(DB::table('settings')->where('company_id', $comp->id)->where('key', 'subscription.mrr')->value('value') ?? ($comp->id == 1 ? 0.0 : 49.0));
+            $status = DB::table('settings')->where('company_id', $comp->id)->where('key', 'subscription.status')->value('value') ?? 'active';
+
             $invoiceCount = Document::invoice()->count();
             $invoicesTotal = (float) Document::invoice()->sum('amount');
 
             $totalInvoicesCount += $invoiceCount;
             $totalRevenueVolume += $invoicesTotal;
+            $totalMrr = ($totalMrr ?? 0.0) + $compMrr;
 
             $tenantList[] = [
                 'id'             => $comp->id,
                 'name'           => $name,
                 'tax_number'     => $taxNumber,
                 'currency'       => $currency,
+                'plan'           => $plan,
+                'mrr'            => $compMrr,
                 'invoice_count'  => $invoiceCount,
                 'revenue_volume' => $invoicesTotal,
-                'status'         => 'active',
+                'status'         => $status,
                 'created_at'     => $comp->created_at ? $comp->created_at->toIso8601String() : null,
             ];
         }
 
-        // Pricing model: S$49/mo per active tenant on StraitsLedger Professional tier
-        $mrr = $totalCompanies * 49;
-        $arr = $mrr * 12;
+        $arr = ($totalMrr ?? 0.0) * 12;
 
         return response()->json([
             'status'     => 'success',
@@ -67,7 +72,7 @@ class PlatformTelemetryController extends Controller
             'metrics'    => [
                 'total_companies'     => $totalCompanies,
                 'active_companies'    => $totalCompanies,
-                'mrr_sgd'             => $mrr,
+                'mrr_sgd'             => $totalMrr ?? 0.0,
                 'arr_sgd'             => $arr,
                 'total_invoices'      => $totalInvoicesCount,
                 'total_volume_sgd'    => $totalRevenueVolume,
