@@ -81,4 +81,7 @@ Route::group(['as' => 'api.'], function () {
     // Translations
     Route::get('translations/{locale}/all', 'Common\Translations@all')->name('translations.all');
     Route::get('translations/{locale}/{file}', 'Common\Translations@file')->name('translations.file');
+
+    // Third-Party Integrations Webhooks
+    Route::post('webhooks/shopify/{company_id}', [App\Http\Controllers\Api\ShopifyWebhookController::class, 'handle'])->name('webhooks.shopify');
 });

@@ -38,6 +38,12 @@
 
                 <!-- Right Side Actions & Profile -->
                 <div class="flex items-center space-x-3">
+                    <a href="/marketplace" class="text-xs bg-white/10 hover:bg-white/20 text-white font-medium px-3.5 py-1.5 rounded-lg border border-white/20 transition flex items-center space-x-1.5">
+                        <i class="fa-solid fa-puzzle-piece text-emerald-400"></i>
+                        <span class="hidden sm:inline">App Marketplace</span>
+                        <span class="sm:hidden">Apps</span>
+                    </a>
+
                     <a href="/1" class="text-xs bg-white/10 hover:bg-white/20 text-white font-medium px-3.5 py-1.5 rounded-lg border border-white/20 transition flex items-center space-x-1.5">
                         <i class="fa-solid fa-arrow-right-to-bracket text-emerald-400"></i>
                         <span class="hidden sm:inline">Switch to Tenant Ledger</span>

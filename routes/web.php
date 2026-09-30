@@ -34,5 +34,10 @@ Route::middleware(['web', 'auth'])->group(function () {
     });
     Route::get('/platform/switch/{company}', [App\Http\Controllers\Platform\SuperAdminController::class, 'switchTenant'])->name('platform.switch');
     Route::post('/platform/provision', [App\Http\Controllers\Platform\SuperAdminController::class, 'provision'])->name('platform.provision');
+
+    // Marketplace & Third-Party Integrations Hub
+    Route::get('/marketplace', [App\Http\Controllers\Platform\MarketplaceController::class, 'index'])->name('marketplace.index');
+    Route::post('/marketplace/wave/sync', [App\Http\Controllers\Platform\MarketplaceController::class, 'syncWave'])->name('marketplace.wave.sync');
+    Route::post('/marketplace/shopify/connect', [App\Http\Controllers\Platform\MarketplaceController::class, 'connectShopify'])->name('marketplace.shopify.connect');
 });
 
