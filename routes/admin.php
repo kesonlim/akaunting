@@ -165,6 +165,13 @@ Route::group(['prefix' => 'banking'], function () {
     Route::post('reconciliations/calculate', 'Banking\Reconciliations@calculate')->middleware(['money']);
     Route::patch('reconciliations/calculate', 'Banking\Reconciliations@calculate')->middleware(['money']);
     Route::resource('reconciliations', 'Banking\Reconciliations', ['middleware' => ['date.format', 'money', 'dropzone']]);
+
+    // Singapore Bank Statement Reconciler & Transaction Matcher
+    Route::get('singapore-reconciler', 'Banking\SingaporeReconcilerController@index')->name('singapore-reconciler.index');
+    Route::post('singapore-reconciler/parse', 'Banking\SingaporeReconcilerController@parse')->name('singapore-reconciler.parse');
+    Route::post('singapore-reconciler/reconcile', 'Banking\SingaporeReconcilerController@reconcile')->name('singapore-reconciler.reconcile');
+    Route::post('singapore-reconciler/batch-reconcile', 'Banking\SingaporeReconcilerController@batchReconcile')->name('singapore-reconciler.batch-reconcile');
+    Route::get('singapore-reconciler/sample/{bank}', 'Banking\SingaporeReconcilerController@downloadSample')->name('singapore-reconciler.sample');
 });
 
 Route::group(['prefix' => 'settings'], function () {

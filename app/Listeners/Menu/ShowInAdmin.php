@@ -96,6 +96,7 @@ class ShowInAdmin
                 $title = trim(trans_choice('general.reconciliations', 2));
                 if ($this->canAccessMenuItem($title, 'read-banking-reconciliations')) {
                     $sub->route('reconciliations.index', $title, [], 40, $attr);
+                    $sub->route('singapore-reconciler.index', 'SG Bank Matcher', [], 50, $attr);
                 }
             }, 50, [
                 'title' => $title,

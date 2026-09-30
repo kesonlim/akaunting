@@ -8,6 +8,11 @@
     ></x-slot>
 
     <x-slot name="buttons">
+        <x-link href="{{ route('singapore-reconciler.index') }}" class="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold text-white shadow-sm ltr:mr-2 rtl:ml-2" style="background: linear-gradient(135deg, #0A3B32 0%, #10B981 100%);">
+            <span class="material-icons-outlined text-sm ltr:mr-1.5 rtl:ml-1.5">auto_awesome</span>
+            Singapore Bank Matcher
+        </x-link>
+
         @can('create-banking-reconciliations')
             <x-link href="{{ route('reconciliations.create') }}" kind="primary" id="index-more-actions-new-reconciliation">
                 {{ trans('general.title.new', ['type' => trans_choice('general.reconciliations', 1)]) }}
