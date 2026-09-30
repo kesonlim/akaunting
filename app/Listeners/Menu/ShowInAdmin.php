@@ -104,6 +104,12 @@ class ShowInAdmin
             ]);
         }
 
+        // Migration / Tools
+        if ($this->canAccessMenuItem('Wave Migration', 'read-common-contacts')) {
+            $active = (Str::contains(Route::currentRouteName(), 'wave-migration')) ? true : false;
+            $menu->route('wave-migration.index', 'Wave Migration', [], 55, ['icon' => 'swap_horiz', 'active' => $active]);
+        }
+
         // Reports
         $title = trim(trans_choice('general.reports', 2));
         if ($this->canAccessMenuItem($title, 'read-common-reports')) {

@@ -1,0 +1,5 @@
+Transaction ID,Transaction Date,Description,Total Amount,Tax Amount,Account Name,Category,Notes
+WAVE-TX-901,2026-03-01,Client Project Payment - Acme Tech,4500.00,0.00,DBS Business Current Account,Consulting & Advisory Services,Direct transfer via PayNow
+WAVE-TX-902,2026-03-04,Singtel Monthly Fibre & Voice Line,-168.00,0.00,DBS Business Current Account,Office Rental & Utilities,Auto-debit
+WAVE-TX-903,2026-03-10,Amazon Web Services Singapore,-245.50,0.00,DBS Business Current Account,Web Hosting & Cloud Services,Cloud hosting
+WAVE-TX-904,2026-03-15,Merlion Consulting Project Milestone,3200.00,0.00,DBS Business Current Account,Consulting & Advisory Services,Fast transfer

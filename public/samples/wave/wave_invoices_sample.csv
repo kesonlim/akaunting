@@ -1,0 +1,4 @@
+Invoice #,Customer Name,Invoice Date,Due Date,Item Description,Quantity,Unit Price,Tax Name,Tax Amount,Discount,Total,Currency Code
+INV-WV-001,Acme Tech Singapore Pte Ltd,2026-02-01,2026-02-15,Digital Transformation Strategy Consulting,1,3500.00,None,0.00,0.00,3500.00,SGD
+INV-WV-002,Lion City Logistics,2026-02-10,2026-02-24,Custom Portal Integration & Deployment,1,2800.00,None,0.00,0.00,2800.00,SGD
+INV-WV-003,Raffles Digital Media,2026-02-18,2026-03-04,Cloud Architecture Security Review,1,1950.00,None,0.00,0.00,1950.00,SGD

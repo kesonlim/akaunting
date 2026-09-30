@@ -52,6 +52,13 @@ Route::group(['prefix' => 'common'], function () {
     Route::get('contacts/index', 'Common\Contacts@index')->name('contacts.index');
 
     Route::get('plans/check', 'Common\Plans@check')->name('plans.check');
+
+    // WaveApps Migration Wizard
+    Route::get('wave-migration', 'Common\WaveMigrationController@index')->name('wave-migration.index');
+    Route::post('wave-migration/upload', 'Common\WaveMigrationController@upload')->name('wave-migration.upload');
+    Route::post('wave-migration/preview', 'Common\WaveMigrationController@preview')->name('wave-migration.preview');
+    Route::post('wave-migration/confirm', 'Common\WaveMigrationController@confirm')->name('wave-migration.confirm');
+    Route::get('wave-migration/sample/{type}', 'Common\WaveMigrationController@downloadSample')->name('wave-migration.sample');
 });
 
 Route::group(['prefix' => 'auth'], function () {
