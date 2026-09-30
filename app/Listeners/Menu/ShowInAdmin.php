@@ -105,7 +105,7 @@ class ShowInAdmin
         }
 
         // Migration / Tools
-        if ($this->canAccessMenuItem('Wave Migration', 'read-common-contacts')) {
+        if ($this->canAccessMenuItem('Wave Migration', 'read-sales-customers')) {
             $active = (Str::contains(Route::currentRouteName(), 'wave-migration')) ? true : false;
             $menu->route('wave-migration.index', 'Wave Migration', [], 55, ['icon' => 'swap_horiz', 'active' => $active]);
         }

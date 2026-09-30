@@ -17,9 +17,9 @@ class WaveMigrationController extends Controller
         $this->parser   = $parser;
         $this->importer = $importer;
 
-        // Skip parent::__construct() to avoid auto-permission-slug lookup
-        $this->middleware('permission:read-common-contacts')->only('index', 'downloadSample');
-        $this->middleware('permission:create-common-contacts')->only('upload', 'preview', 'confirm');
+        // Use seeded permissions
+        $this->middleware('permission:read-sales-customers')->only('index', 'downloadSample');
+        $this->middleware('permission:create-sales-customers')->only('upload', 'preview', 'confirm');
     }
 
     /**
