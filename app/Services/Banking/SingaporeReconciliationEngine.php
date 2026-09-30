@@ -10,9 +10,11 @@ use App\Jobs\Banking\CreateBankingDocumentTransaction;
 use App\Jobs\Banking\CreateTransaction;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use App\Traits\Transactions;
 
 class SingaporeReconciliationEngine
 {
+    use Transactions;
     /**
      * Run smart matching across a list of parsed bank transactions.
      *
@@ -382,18 +384,23 @@ class SingaporeReconciliationEngine
             return ['success' => false, 'error' => 'No active bank account found.'];
         }
 
+        $companyId = company_id();
+
         try {
             switch ($action) {
                 case 'match_invoice':
                     $invoiceId = (int) ($actionData['target_id'] ?? 0);
                     $invoice = Document::invoice()->find($invoiceId);
                     if (!$invoice) {
-                        return ['success' => false, 'error' => 'Invoice not found.'];
+                        // If no specific open invoice matches (e.g. simulated statement or direct wire), fall back cleanly to recording direct income
+                        return $this->executeAction(array_merge($actionData, ['action' => 'create_income']));
                     }
 
                     // Dispatch Document Transaction Job
                     $job = new CreateBankingDocumentTransaction($invoice, [
                         'type' => 'income',
+                        'number' => $this->getNextTransactionNumber('income'),
+                        'company_id' => $companyId,
                         'account_id' => $account->id,
                         'amount' => $amount,
                         'currency_code' => $account->currency_code,
@@ -416,11 +423,14 @@ class SingaporeReconciliationEngine
                     $billId = (int) ($actionData['target_id'] ?? 0);
                     $bill = Document::bill()->find($billId);
                     if (!$bill) {
-                        return ['success' => false, 'error' => 'Bill not found.'];
+                        // Fall back cleanly to recording expense
+                        return $this->executeAction(array_merge($actionData, ['action' => 'create_expense']));
                     }
 
                     $job = new CreateBankingDocumentTransaction($bill, [
                         'type' => 'expense',
+                        'number' => $this->getNextTransactionNumber('expense'),
+                        'company_id' => $companyId,
                         'account_id' => $account->id,
                         'amount' => $amount,
                         'currency_code' => $account->currency_code,
@@ -447,6 +457,8 @@ class SingaporeReconciliationEngine
 
                     $tx = (new CreateTransaction([
                         'type' => 'income',
+                        'number' => $this->getNextTransactionNumber('income'),
+                        'company_id' => $companyId,
                         'account_id' => $account->id,
                         'amount' => $amount,
                         'currency_code' => $account->currency_code,
@@ -473,6 +485,8 @@ class SingaporeReconciliationEngine
 
                     $tx = (new CreateTransaction([
                         'type' => 'expense',
+                        'number' => $this->getNextTransactionNumber('expense'),
+                        'company_id' => $companyId,
                         'account_id' => $account->id,
                         'amount' => $amount,
                         'currency_code' => $account->currency_code,
