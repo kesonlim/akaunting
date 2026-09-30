@@ -16,9 +16,11 @@ class SingaporeReconcilerController extends Controller
 
     public function __construct(SingaporeBankParser $parser, SingaporeReconciliationEngine $engine)
     {
-        parent::__construct();
         $this->parser = $parser;
         $this->engine = $engine;
+
+        $this->middleware('permission:read-banking-reconciliations')->only('index', 'downloadSample');
+        $this->middleware('permission:create-banking-reconciliations')->only('parse', 'reconcile', 'batchReconcile');
     }
 
     /**
