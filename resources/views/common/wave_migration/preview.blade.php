@@ -132,19 +132,19 @@
         </div>
 
         {{-- ── Action Buttons ── --}}
-        <div class="flex flex-col sm:flex-row gap-4 items-center">
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white rounded-2xl border border-gray-200 shadow-sm">
             <a href="{{ route('wave-migration.index') }}"
-               class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-300 bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 transition">
+               class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-xl border border-gray-200 bg-gray-50 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition">
                 <span class="material-icons-outlined text-sm ltr:mr-2 rtl:ml-2">arrow_back</span>
                 Back — Upload Different File
             </a>
 
-            <form action="{{ route('wave-migration.confirm') }}" method="POST" class="w-full sm:flex-1">
+            <form action="{{ route('wave-migration.confirm') }}" method="POST" class="w-full sm:w-auto">
                 @csrf
                 <button type="submit"
-                        class="w-full py-3 rounded-xl text-sm font-bold text-white shadow-lg hover:opacity-90 transition flex items-center justify-center"
-                        style="background: linear-gradient(135deg, #b45309, #d97706);">
-                    <span class="material-icons-outlined text-sm ltr:mr-2 rtl:ml-2">check_circle</span>
+                        class="w-full sm:w-auto px-8 py-3 rounded-xl text-sm font-bold text-white shadow-md hover:shadow-lg transition flex items-center justify-center cursor-pointer"
+                        style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+                    <span class="material-icons-outlined text-base ltr:mr-2 rtl:ml-2">check_circle</span>
                     Confirm & Import {{ $count }} {{ $typeLabel }} into StraitsLedger
                 </button>
             </form>
