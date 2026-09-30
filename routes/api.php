@@ -84,4 +84,7 @@ Route::group(['as' => 'api.'], function () {
 
     // Third-Party Integrations Webhooks
     Route::post('webhooks/shopify/{company_id}', [App\Http\Controllers\Api\ShopifyWebhookController::class, 'handle'])->name('webhooks.shopify');
+
+    // Straits Master CEO Console Telemetry
+    Route::get('platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry'])->name('platform.telemetry');
 });
