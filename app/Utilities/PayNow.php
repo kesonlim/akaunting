@@ -3,6 +3,8 @@
 namespace App\Utilities;
 
 use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
+use chillerlan\QRCode\Output\QRGdImagePNG;
 
 class PayNow
 {
@@ -38,26 +40,34 @@ class PayNow
     /**
      * Generate Singapore EMVCo PayNow SGQR payload.
      *
-     * @param string $uen Company UEN (e.g. 202412345K)
+     * @param string $proxy UEN (e.g. 200415432K) or Mobile (e.g. +6591234567)
      * @param float|int|string|null $amount Invoice amount (e.g. 150.00)
      * @param string $ref Reference / Invoice Number (e.g. INV-0001)
      * @param string $companyName Merchant / Company Name
+     * @param string $proxyType '2' for UEN (default), '0' for Mobile
      * @return string Complete EMVCo QR String
      */
     public static function generatePayload(
-        string $uen,
+        string $proxy,
         $amount = null,
         string $ref = '',
-        string $companyName = 'Straits Leisure'
+        string $companyName = 'Merchant',
+        string $proxyType = '2'
     ): string {
-        $cleanUen = trim(strtoupper($uen));
+        $cleanProxy = trim(strtoupper($proxy));
         $hasAmount = !empty($amount) && (float) $amount > 0;
+        $isMobile = ($proxyType === '0' || str_starts_with($cleanProxy, '+') || (strlen($cleanProxy) === 8 && is_numeric($cleanProxy)));
+        $typeTag = $isMobile ? '0' : '2';
+
+        if ($isMobile && !str_starts_with($cleanProxy, '+') && strlen($cleanProxy) === 8) {
+            $cleanProxy = '+65' . $cleanProxy;
+        }
 
         // Subtags for Tag 26 (Merchant Account Information - PayNow)
         $sub26 = self::emvTag('00', 'SG.PAYNOW');
-        $sub26 .= self::emvTag('01', '2'); // '2' represents UEN in Singapore PayNow spec ('0' is mobile)
-        $sub26 .= self::emvTag('02', $cleanUen);
-        $sub26 .= self::emvTag('03', $hasAmount ? '0' : '1'); // '0' = exact/locked amount, '1' = editable amount
+        $sub26 .= self::emvTag('01', $typeTag);
+        $sub26 .= self::emvTag('02', $cleanProxy);
+        $sub26 .= self::emvTag('03', $hasAmount ? '0' : '1'); // '0' = exact amount, '1' = editable
 
         // Root EMVCo Payload
         $payload = self::emvTag('00', '01'); // Format Indicator
@@ -72,7 +82,8 @@ class PayNow
         }
 
         $payload .= self::emvTag('58', 'SG'); // Country code
-        $payload .= self::emvTag('59', substr(trim($companyName), 0, 25)); // Merchant Name
+        $merchantName = !empty(trim($companyName)) ? trim($companyName) : 'Merchant';
+        $payload .= self::emvTag('59', substr($merchantName, 0, 25)); // Merchant Name
         $payload .= self::emvTag('60', 'Singapore'); // Merchant City
 
         if (!empty($ref)) {
@@ -88,15 +99,32 @@ class PayNow
     }
 
     /**
-     * Generate an SVG Data URI for embedding in <img> tags.
+     * Generate a PNG Data URI for embedding in <img> tags.
+     * Compatible with both web browsers and DomPDF rendering engines.
      */
     public static function generateQrCodeDataUri(
-        string $uen,
+        string $proxy,
         $amount = null,
         string $ref = '',
-        string $companyName = 'Straits Leisure'
+        string $companyName = 'Merchant',
+        string $proxyType = '2'
     ): string {
-        $payload = self::generatePayload($uen, $amount, $ref, $companyName);
-        return (new QRCode)->render($payload);
+        try {
+            $payload = self::generatePayload($proxy, $amount, $ref, $companyName, $proxyType);
+
+            $options = new QROptions([
+                'outputInterface'  => QRGdImagePNG::class,
+                'outputBase64'     => true,
+                'scale'            => 6,
+                'imageTransparent' => false,
+                'quietzoneSize'    => 2,
+            ]);
+
+            return (new QRCode($options))->render($payload);
+        } catch (\Throwable $e) {
+            // Fallback to default render if options fail
+            $payload = self::generatePayload($proxy, $amount, $ref, $companyName, $proxyType);
+            return (new QRCode)->render($payload);
+        }
     }
 }

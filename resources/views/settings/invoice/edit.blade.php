@@ -93,6 +93,20 @@
 
                 <x-form.section>
                     <x-slot name="head">
+                        <x-form.section.head title="Singapore PayNow SGQR" description="Configure dynamic Singapore PayNow SGQR instant domestic payment codes printed on all invoices." />
+                    </x-slot>
+
+                    <x-slot name="body">
+                        <x-form.group.toggle name="paynow_enabled" label="Enable PayNow SGQR on Invoices" :value="setting('invoice.paynow_enabled', 1)" not-required form-group-class="sm:col-span-6" />
+
+                        <x-form.group.text name="paynow_uen" label="PayNow Corporate Entity UEN / Identifier" :value="setting('invoice.paynow_uen', setting('company.tax_number', setting('general.company_tax_number')))" placeholder="e.g. 200415432K" not-required form-group-class="sm:col-span-3" />
+
+                        <x-form.group.text name="paynow_merchant_name" label="PayNow Merchant / Display Name" :value="setting('invoice.paynow_merchant_name', setting('company.name', setting('general.company_name')))" placeholder="e.g. Think Thank Pte Ltd" not-required form-group-class="sm:col-span-3" />
+                    </x-slot>
+                </x-form.section>
+
+                <x-form.section>
+                    <x-slot name="head">
                         <x-form.section.head title="{{ trans_choice('settings.invoice.column', 2) }}" description="{{ trans('settings.invoice.form_description.column') }}" />
                     </x-slot>
 
