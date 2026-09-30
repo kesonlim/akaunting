@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class MarketplaceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display the Straits Marketplace & Integrations directory.
      */
