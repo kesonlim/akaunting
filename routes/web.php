@@ -26,6 +26,14 @@ Route::get('/switch-from-wave', function () {
     return view('landing.switch-from-wave');
 })->name('landing.switch-from-wave');
 
+Route::get('/switch-from-xero', function () {
+    return view('landing.switch-from-xero');
+})->name('landing.switch-from-xero');
+
+Route::get('/switch-from-quickbooks', function () {
+    return view('landing.switch-from-quickbooks');
+})->name('landing.switch-from-quickbooks');
+
 // Straits Master Telemetry Endpoint (CORS enabled for straits.thethinkthank.com)
 Route::get('/api/platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry']);
 
