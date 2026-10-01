@@ -34,6 +34,33 @@ Route::get('/switch-from-quickbooks', function () {
     return view('landing.switch-from-quickbooks');
 })->name('landing.switch-from-quickbooks');
 
+// Target Persona & Vertical Landing Pages
+Route::prefix('for')->group(function () {
+    Route::get('/gst-registered-companies', function () {
+        return view('landing.for.gst-registered-companies');
+    })->name('landing.for.gst');
+
+    Route::get('/freelancers-consultants', function () {
+        return view('landing.for.freelancers-consultants');
+    })->name('landing.for.freelancers');
+
+    Route::get('/digital-agencies', function () {
+        return view('landing.for.digital-agencies');
+    })->name('landing.for.agencies');
+
+    Route::get('/ecommerce-merchants', function () {
+        return view('landing.for.ecommerce-merchants');
+    })->name('landing.for.ecommerce');
+
+    Route::get('/wholesale-distributors', function () {
+        return view('landing.for.wholesale-distributors');
+    })->name('landing.for.wholesale');
+
+    Route::get('/corporate-secretaries', function () {
+        return view('landing.for.corporate-secretaries');
+    })->name('landing.for.sec');
+});
+
 // Straits Master Telemetry Endpoint (CORS enabled for straits.thethinkthank.com)
 Route::get('/api/platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry']);
 
