@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Portal;
 
-use App\Abstracts\Http\Controller;
+use Illuminate\Routing\Controller as BaseController;
 use App\Models\Document\Document;
 use App\Models\Banking\Transaction;
 use App\Models\Setting\Category;
@@ -11,7 +11,7 @@ use App\Traits\Transactions as TransactionsTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class PayNowCheckoutController extends Controller
+class PayNowCheckoutController extends BaseController
 {
     use TransactionsTrait;
 
@@ -23,7 +23,8 @@ class PayNowCheckoutController extends Controller
      */
     public function show(string $documentNumber)
     {
-        $invoice = Document::invoice()
+        $invoice = Document::withoutGlobalScopes()
+            ->where('type', 'invoice')
             ->where('document_number', $documentNumber)
             ->with(['contact', 'items', 'totals', 'company'])
             ->firstOrFail();
@@ -78,7 +79,8 @@ class PayNowCheckoutController extends Controller
             'notes'     => 'nullable|string|max:500',
         ]);
 
-        $invoice = Document::invoice()
+        $invoice = Document::withoutGlobalScopes()
+            ->where('type', 'invoice')
             ->where('document_number', $documentNumber)
             ->firstOrFail();
 
