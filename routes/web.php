@@ -61,6 +61,10 @@ Route::prefix('for')->group(function () {
     })->name('landing.for.sec');
 });
 
+// Client Portal & Instant PayNow QR Checkout Experience (Track 6)
+Route::get('/pay/{document_number}', [App\Http\Controllers\Portal\PayNowCheckoutController::class, 'show'])->name('portal.paynow.checkout');
+Route::post('/pay/{document_number}/confirm', [App\Http\Controllers\Portal\PayNowCheckoutController::class, 'confirmPayment'])->name('portal.paynow.confirm');
+
 // Straits Master Telemetry Endpoint (CORS enabled for straits.thethinkthank.com)
 Route::get('/api/platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry']);
 
