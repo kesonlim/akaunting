@@ -82,9 +82,9 @@
                 <div class="w-9 h-9 rounded-xl bg-straits-emerald flex items-center justify-center text-white font-bold font-display text-lg">S</div>
                 <span class="font-display font-bold text-xl text-straits-emerald tracking-tight">StraitsLedger</span>
             </a>
-            <div class="flex items-center space-x-3 sm:space-x-4">
-                <a href="/auth/login" class="text-xs sm:text-sm font-medium text-straits-muted hover:text-straits-emerald">Sign In</a>
-                <a href="/auth/login" class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-straits-emerald hover:bg-straits-emerald-dark rounded-xl shadow-sm transition">
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <a href="/auth/login" class="hidden sm:inline text-xs sm:text-sm font-medium text-straits-muted hover:text-straits-emerald">Sign In</a>
+                <a href="/auth/login" class="inline-flex items-center justify-center px-3.5 py-2 text-xs sm:text-sm font-semibold text-white bg-straits-emerald hover:bg-straits-emerald-dark rounded-xl shadow-sm transition whitespace-nowrap">
                     Get Free Account
                 </a>
             </div>
