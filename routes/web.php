@@ -65,6 +65,10 @@ Route::prefix('for')->group(function () {
 Route::get('/pay/{document_number}', [App\Http\Controllers\Portal\PayNowCheckoutController::class, 'show'])->name('portal.paynow.checkout');
 Route::post('/pay/{document_number}/confirm', [App\Http\Controllers\Portal\PayNowCheckoutController::class, 'confirmPayment'])->name('portal.paynow.confirm');
 
+// Top-of-Funnel Lead Magnet: Free Singapore PayNow Invoice Generator
+Route::get('/free-paynow-invoice-generator', [App\Http\Controllers\Marketing\FreeInvoiceGeneratorController::class, 'index'])->name('tools.free-invoice-generator');
+Route::post('/api/tools/paynow-qr', [App\Http\Controllers\Marketing\FreeInvoiceGeneratorController::class, 'generateQr'])->name('api.tools.paynow-qr');
+
 // Straits Master Telemetry Endpoint (CORS enabled for straits.thethinkthank.com)
 Route::get('/api/platform/telemetry', [App\Http\Controllers\Api\PlatformTelemetryController::class, 'getTelemetry']);
 

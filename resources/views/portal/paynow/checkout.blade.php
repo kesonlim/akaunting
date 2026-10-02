@@ -195,6 +195,28 @@
                 </div>
                 @endif
 
+                <!-- Viral Referral Growth Loop Card -->
+                <div class="p-5 rounded-3xl bg-gradient-to-br from-emerald-900 to-straits-emerald text-white shadow-md text-left relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="px-2 py-0.5 text-[10px] font-bold rounded-md bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 uppercase tracking-wider">Free For Singapore Businesses</span>
+                        </div>
+                        <h3 class="font-bold text-sm font-display text-white">Like this 1-click PayNow checkout?</h3>
+                        <p class="text-xs text-emerald-100/90 mt-1 leading-relaxed">
+                            Send Singapore invoices with automatic 0% fee PayNow QR codes for your own company. No subscription fees.
+                        </p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <a href="/free-paynow-invoice-generator" target="_blank"
+                               class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white text-emerald-950 font-bold text-xs shadow-sm hover:bg-emerald-50 transition">
+                                Create Free PayNow Invoice →
+                            </a>
+                            <a href="/switch-from-xero" target="_blank" class="text-xs text-emerald-200 hover:text-white underline">
+                                Compare vs Xero
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Security & Help Badge -->
                 <div class="p-4 rounded-2xl bg-white border border-straits-border text-center text-xs text-gray-500">
                     <p class="font-medium text-gray-700">🔒 Direct Bank-to-Bank Transfer</p>
@@ -209,8 +231,15 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-straits-border py-6 mt-12">
-        <div class="max-w-4xl mx-auto px-4 text-center text-xs text-gray-400">
-            <p>Powered by <strong class="text-straits-slate">StraitsLedger</strong> • Singapore Compliance Accounting</p>
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+            <p>Powered by <a href="/" class="font-bold text-straits-emerald hover:underline">StraitsLedger</a> • Singapore Compliance Accounting</p>
+            <div class="flex items-center space-x-4">
+                <a href="/free-paynow-invoice-generator" class="hover:text-gray-600 transition">Free Invoice Tool</a>
+                <span>•</span>
+                <a href="/switch-from-xero" class="hover:text-gray-600 transition">Switch from Xero</a>
+                <span>•</span>
+                <a href="/switch-from-quickbooks" class="hover:text-gray-600 transition">Switch from QuickBooks</a>
+            </div>
         </div>
     </footer>
 
